@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Heading from '../components/Heading'
+import Navigation from '../components/Navigation.vue'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/*',
-      name: 'Heading',
-      component: Heading
-    }
-  ]
+	routes: [
+		{
+			path:      '/*',
+			name:      'Navigation',
+			component: Navigation
+		}
+	]
 })
