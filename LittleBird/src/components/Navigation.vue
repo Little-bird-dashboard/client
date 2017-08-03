@@ -1,9 +1,10 @@
 <template>
-    <div class="nav">
+    <div id="nav">
         <nav class="navbar bg-primary fixed-top">
             <div class="container">
                 <div class="row">
                     <a href="#"> <img width="50" height="43" src="../assets/logo.png" alt="logo" id="logo"></a>
+                    <span>Little Bird</span>
                     <div class="navbar-nav pull-right">
                         <div>
                             <span><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></span> <span><i
@@ -18,7 +19,7 @@
 
 <script>
 	export default {
-		name:    'navigation',
+		name:    'Navigation',
 		data() {
 			return {
 				title: 'Little Bird'
