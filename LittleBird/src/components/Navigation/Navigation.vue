@@ -3,14 +3,14 @@
         <nav class="navbar bg-primary fixed-top">
             <div class="container">
                 <div class="row">
-                    <a href="#"> <img width="50" height="43" src="../../assets/logo.png" alt="logo" id="logo"></a>
-                    <span id="title">Little Bird</span>
+                    <a href="#"> <img width="50" height="43" src="../../assets/logo.png" alt="logo" id="logo"></a> <span
+                    id="title">Little Bird</span>
                     <div class="navbar-nav pull-right">
                         <div>
-                            <span
-                                class="top-align"><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></span>
-                            <span class="top-align"><i
-                                class="fa fa-cog fa-inverse fa-3x" aria-hidden="true"></i></span>
+                            <a><span
+                                class="top-align"><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></span></a>
+                            <a><span class="top-align"><i
+                                class="fa fa-cog fa-inverse fa-3x" aria-hidden="true"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -35,6 +35,7 @@
     #title {
         font-size: 24px;
     }
+
     #logo {
         margin-left: auto;
     }
