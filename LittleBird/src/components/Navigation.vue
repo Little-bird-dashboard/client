@@ -7,8 +7,10 @@
                     <span>Little Bird</span>
                     <div class="navbar-nav pull-right">
                         <div>
-                            <span><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></span> <span><i
-                            class="fa fa-cog fa-inverse fa-3x" aria-hidden="true"></i></span>
+                            <span
+                                class="top-align"><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></span>
+                            <span class="top-align"><i
+                                class="fa fa-cog fa-inverse fa-3x" aria-hidden="true"></i></span>
                         </div>
                     </div>
                 </div>
@@ -32,5 +34,10 @@
 <style>
     #logo {
         margin-left: auto;
+    }
+
+    .top-align {
+        margin-top:    auto;
+        margin-bottom: auto;
     }
 </style>
