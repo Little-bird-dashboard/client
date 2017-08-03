@@ -3,8 +3,8 @@
         <nav class="navbar bg-primary fixed-top">
             <div class="container">
                 <div class="row">
-                    <a href="#"> <img width="50" height="43" src="../assets/logo.png" alt="logo" id="logo"></a>
-                    <span>Little Bird</span>
+                    <a href="#"> <img width="50" height="43" src="../../assets/logo.png" alt="logo" id="logo"></a>
+                    <span id="title">Little Bird</span>
                     <div class="navbar-nav pull-right">
                         <div>
                             <span
@@ -32,6 +32,9 @@
 </script>
 
 <style>
+    #title {
+        font-size: 24px;
+    }
     #logo {
         margin-left: auto;
     }

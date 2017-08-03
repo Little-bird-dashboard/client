@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import main from '../components/main.vue'
+import main from '../pages/Main.vue'
+import Home from '../pages/Home.vue'
+import Student from '../pages/Student.vue'
 
 Vue.use(Router)
+
 
 export default new Router({
 	routes: [
@@ -10,6 +13,11 @@ export default new Router({
 			path:      '/',
 			name:      'main',
 			component: main
-		}
-	]
+		},{
+			path: '/home',
+			component: Home
+		}, {
+			path: '/student',
+			component: Student
+		}]
 })
