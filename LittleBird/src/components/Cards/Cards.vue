@@ -27,7 +27,7 @@
 </template>
 
 <script>
-	import cards_data from '../lib/cards_data'
+	import cards_data from '../lib/student_data'
 	export default {
 		name: 'cards',
 		data() {

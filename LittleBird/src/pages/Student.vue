@@ -1,15 +1,17 @@
 <template>
     <div id="StudentPage">
+        <StudentCard/>
         <StatusBar/>
-        <h1>Little Bird</h1>
     </div>
 </template>
 
 <script>
 	import StatusBar from '../components/StatusBar/StatusBar.vue'
+    import StudentCard from '../components/StudentCard/StudentCard.vue'
 	export default {
 		name:       'StudentPage',
 		components: {
+			StudentCard,
 			StatusBar
 		}
 	}

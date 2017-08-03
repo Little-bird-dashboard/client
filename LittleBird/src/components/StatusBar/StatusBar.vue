@@ -3,19 +3,20 @@
         <nav class="navbar bg-primary">
             <div class="container">
                 <div class="row">
-                    <p>
-                        <i class="fa fa-list-alt" aria-hidden="true"> </i>
-                    </p>
                     <div class="navbar-nav">
-                        <div>
-                            <a><span class="top-align">
-                                <i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></span>
-                            </a>
+                        <div class="col-lg-4">
+                            <a class="navbar-brand" href="#">Hogwarts University</a>
                         </div>
-                        <div>
-                            <a><span class="top-align">
-                                <i class="fa fa-cog fa-inverse fa-3x" aria-hidden="true"></i></span>
-                            </a>
+                        <div class="col-lg-4">
+                            <form class="form-inline mt-2 mt-md-0">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                            <div class="col-lg-4">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -25,8 +26,9 @@
 </template>
 
 <script>
+	import student_data from '../lib/student_data'
 	export default {
-		name:    'StatusBar'
+		name: 'StatusBar'
 	}
 </script>
 
