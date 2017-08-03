@@ -2,7 +2,15 @@
     <div class="cards" style="width:20rem;">
         <div class="card-group" v-for="card in cards_data">
             <div class="card-group-item">
-                <img width="60" height="60" v-bind:src="card.image_url"/> {{ card.name }}
+                <img width="60" height="60" v-bind:src="card.image_url"/>
+                <router-link :to="{
+                	name: 'student',
+                	params: {
+                		student_id: 1
+                	}
+                }">
+                    {{ card.name }}
+                </router-link>
             </div>
             <div class="card-group-item">
                 <span>

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-	import Navigation from '../components/Navigation/Navigation.vue'
+	import Navigation from '../components/NavBar/NavBar.vue'
 	import Cards from '../components/Cards/Cards.vue'
 	import SearchBar from '../components/SearchBar/SearchBar.vue'
 	export default {

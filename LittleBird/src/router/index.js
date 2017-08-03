@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import main from '../pages/Main.vue'
+import Main from '../pages/Main.vue'
 import Home from '../pages/Home.vue'
 import Student from '../pages/Student.vue'
 
@@ -12,12 +12,14 @@ export default new Router({
 		{
 			path:      '/',
 			name:      'main',
-			component: main
+			component: Main
 		},{
 			path: '/home',
+			name: 'HomePage',
 			component: Home
 		}, {
-			path: '/student',
+			path: '/student/:student_id',
+			name: 'StudentPage',
 			component: Student
 		}]
 })

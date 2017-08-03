@@ -1,19 +1,15 @@
 <template>
-    <div id="student">
-        <Navigation/>
-        <SearchBar/>
+    <div id="StudentPage">
+        <StatusBar/>
     </div>
 </template>
 
 <script>
-	import Navigation from '../components/Navigation/Navigation.vue'
-	import SearchBar from '../components/SearchBar/SearchBar.vue'
-
+	import StatusBar from '../components/StatusBar/StatusBar.vue'
 	export default {
-		name:       'student',
+		name:       'StudentPage',
 		components: {
-			Navigation,
-			SearchBar
+			StatusBar
 		}
 	}
 </script>

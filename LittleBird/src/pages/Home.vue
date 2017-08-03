@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    import Navigation from '../components/Navigation/Navigation.vue'
+    import Navigation from '../components/NavBar/NavBar.vue'
     import SearchBar from '../components/SearchBar/SearchBar.vue'
 
     export default {
