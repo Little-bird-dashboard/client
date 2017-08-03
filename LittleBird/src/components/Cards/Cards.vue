@@ -4,9 +4,9 @@
             <div class="card-group-item">
                 <img width="60" height="60" v-bind:src="card.image_url"/>
                 <router-link :to="{
-                	name: 'student',
+                	name: 'StudentPage',
                 	params: {
-                		student_id: 1
+                		student_id: card.student_id
                 	}
                 }">
                     {{ card.name }}
