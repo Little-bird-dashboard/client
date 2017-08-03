@@ -1,6 +1,7 @@
 <template>
     <div id="StudentPage">
         <StatusBar/>
+        <h1>Little Bird</h1>
     </div>
 </template>
 
