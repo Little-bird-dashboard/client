@@ -1,6 +1,6 @@
 <template>
     <div id="StudentPage">
-        <StudentCard :studentData="fetchStudent"/>
+        <StudentCard :studentData="student"/>
         <StatusBar/>
     </div>
 </template>
@@ -15,12 +15,20 @@
 			StudentCard,
 			StatusBar
 		},
-        mounted() {
+    data (){
+      return {
+        studentId: this.$route.params.student_id,
+        student: {}
+      }
+    },
+    mounted() {
 			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}`)
 				.then(response => {
-					this.student = response
+          console.log(response)
+					this.student = response.data
 				})
-        }
+      console.log(this.student)
+    }
 	}
 </script>
 
