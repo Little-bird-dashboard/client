@@ -24,10 +24,8 @@
     mounted() {
 			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}`)
 				.then(response => {
-          console.log(response)
 					this.student = response.data
 				})
-      console.log(this.student)
     }
 	}
 </script>
