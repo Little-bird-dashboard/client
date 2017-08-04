@@ -77,10 +77,7 @@
 	    	}
 		},
 		mounted() {
-			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}`)
-				.then(response => {
-					this.student = response
-				})
+
 
             console.log(this.student.data)
 		}
