@@ -4,26 +4,26 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2">
-                        <img id="studentPicture" width="120" height="120" v-bind:src="this.student.data['profile_img']"/>
+                        <img id="studentPicture" width="120" height="120" v-bind:src="studentData.profile_img"/>
                     </div>
                     <div class="col-lg-6">
                         <div class="row">
                             <div class="col-lg-12">
                                 <h1>
-                                    {{ this.student.data['first_name'] }}
-                                    {{ this.student.data['last_name'] }}
+                                    {{ studentData.first_name }}
+                                    {{ studentData.last_name }}
                                 </h1>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                            <span>
-                               <h4>Student ID: </h4><h5>{{this.student.data['student_id']}}</h5>
+                               <h4>Student ID: </h4><h5>{{studentData.student_id}}</h5>
                            </span>
                             </div>
                             <div class="col-lg-6">
                              <span>
-                               <h4>Grade: </h4><h5>{{this.student.data['grade_name']}}</h5>
+                               <h4>Grade: </h4><h5>{{studentData.grade_name}}</h5>
                            </span>
                             </div>
                         </div>
@@ -31,13 +31,13 @@
                             <div class="col-lg-6">
                                 <h4>Parent: </h4>
                                 <h5>
-                                    {{this.student.data['guardian_first_name']}}
-                                    {{this.student.data['guardian_last_name']}}
+                                    {{studentData.guardian_first_name}}
+                                    {{studentData.guardian_last_name}}
                                 </h5>
                             </div>
                             <div class="col-lg-6">
                                 <h4>Phone: </h4>
-                                <h5>{{this.student.data['guardian_cell']}}</h5>
+                                <h5>{{studentData.guardian_cell}}</h5>
                             </div>
                         </div>
                     </div>
@@ -63,23 +63,10 @@
 	import axios from 'axios'
 	export default {
 		name: 'StudentCard',
+    props: ['studentData'],
 		data() {
 			return {
-				studentId: this.$route.params.student_id,
-                student: {
-                }
-
 			}
-
-		},
-		methods() {
-			return {
-	    	}
-		},
-		mounted() {
-
-
-            console.log(this.student.data)
 		}
 	};
 
