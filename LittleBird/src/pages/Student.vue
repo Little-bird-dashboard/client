@@ -1,29 +1,31 @@
 <template>
     <div id="StudentPage">
-        <StudentCard :studentData="student" />
+        <StudentCard :studentData="student"/>
         <StatusBar/>
-        <p>
-          {{student_id}}
-        </p>
     </div>
 </template>
 
 <script>
 	import StatusBar from '../components/StatusBar/StatusBar.vue'
-  import StudentCard from '../components/StudentCard/StudentCard.vue'
-  import student from '../components/lib/student_data'
+	import StudentCard from '../components/StudentCard/StudentCard.vue'
 
 	export default {
 		name:       'StudentPage',
 		components: {
 			StudentCard,
-			StatusBar,
+			StatusBar
 		},
-    data () {
+    data (){
       return {
-        student_id: this.$route.params.student_id,
-        student
+        studentId: this.$route.params.student_id,
+        student: {}
       }
+    },
+    mounted() {
+			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}`)
+				.then(response => {
+					this.student = response.data
+				})
     }
 	}
 </script>

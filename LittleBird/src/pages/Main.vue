@@ -3,18 +3,9 @@
         <Navigation/>
         <SearchBar/>
         <div class="row">
-            <div class="col-lg-3">
-                <Cards/>
-            </div>
-            <div class="col-lg-3">
-                <Cards/>
-            </div>
-            <div class="col-lg-3">
-                <Cards/>
-            </div>
-            <div class="col-lg-3">
-                <Cards/>
-            </div>
+          <div v-for="card in cards">
+              <Cards :cardData="card"></Cards>
+          </div>
         </div>
     </div>
 </template>
@@ -29,7 +20,19 @@
 			Navigation,
 			Cards,
 			SearchBar
-		}
+		},
+    data () {
+      return {
+        cards: []
+      }
+    },
+    mounted() {
+      //do something after mounting vue instance
+      axios.get('https://littlebird-platform.herokuapp.com/students/')
+				.then(response => {
+					this.cards = response.data
+				})
+    }
 	}
 </script>
 

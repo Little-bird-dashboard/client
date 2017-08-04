@@ -2,23 +2,14 @@
     <div id="StatusBar">
         <nav class="navbar bg-primary">
             <div class="container">
-                <div class="row">
-                    <div class="navbar-nav">
-                        <div class="col-lg-4">
-                            <a class="navbar-brand" href="#">Hogwarts University</a>
-                        </div>
-                        <div class="col-lg-4">
-                            <form class="form-inline mt-2 mt-md-0">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-                        </div>
-                        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                            <div class="col-lg-4">
-
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
                 </div>
             </div>
         </nav>
@@ -26,12 +17,23 @@
 </template>
 
 <script>
-	import student_data from '../lib/student_data'
 	export default {
-		name: 'StatusBar'
+		name:    'StatusBar',
+		props:   ['studentData'],
+		data() {
+			return {}
+		},
+		mounted() {
+			//do something after mounting vue instance
+			// console.log(this.studentData)
+		},
+		methods: {}
 	}
 </script>
 
 <style>
+    .cal {
+        padding: 20px;
+    }
 
 </style>
