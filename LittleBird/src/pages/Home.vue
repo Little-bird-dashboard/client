@@ -6,17 +6,20 @@
 </template>
 
 <script>
-    import Navigation from '../components/NavBar/NavBar.vue'
-    import SearchBar from '../components/SearchBar/SearchBar.vue'
+	import Navigation from '../components/NavBar/NavBar.vue'
+	import SearchBar from '../components/SearchBar/SearchBar.vue'
 
-    export default {
-        name: 'home',
-        components: {
-	        Navigation,
-	        SearchBar
-        }
-    }
+	export default {
+		name:       'home',
+		components: {
+			Navigation,
+			SearchBar
+		}
+	}
 </script>
 
 <style>
+    #home {
+        font-family: 'Open Sans', sans-serif;
+    }
 </style>
