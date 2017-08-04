@@ -30,7 +30,7 @@ export default new Router({
 			name: 'HomePage',
 			component: Home
 		}, {
-			path: '/student/:student_id',
+			path: '/students/:student_id',
 			name: 'StudentPage',
 			component: Student
 		}]

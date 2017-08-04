@@ -7,7 +7,7 @@
                         <img id="studentPicture" width="120" height="120" v-bind:src="this.student.data['profile_img']"/>
                     </div>
                     <div class="col-lg-6">
-                        <div class="row" >
+                        <div class="row">
                             <div class="col-lg-12">
                                 <h1>
                                     {{ this.student.data['first_name'] }}
@@ -48,8 +48,8 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-3 pull-right text-center">
-                                <button class="btn btn-success">edit notes</button>
+                            <div class="col-lg-4 pull-right text-center">
+                                <button class="btn btn-success h2">edit notes</button>
                             </div>
                         </div>
                     </div>
