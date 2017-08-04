@@ -31,4 +31,7 @@
 </script>
 
 <style>
+    #StudentPage {
+        font-family: 'Open Sans', sans-serif;
+    }
 </style>

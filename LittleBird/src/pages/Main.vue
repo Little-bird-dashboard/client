@@ -1,11 +1,13 @@
 <template>
     <div id="main">
-        <Navigation/>
-        <SearchBar/>
-        <div class="row">
-          <div v-for="card in cards">
-              <Cards :cardData="card"></Cards>
-          </div>
+        <div class="container">
+            <Navigation/>
+            <SearchBar/>
+            <div class="row">
+                <div v-for="card in cards">
+                    <Cards :cardData="card"></Cards>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -21,20 +23,24 @@
 			Cards,
 			SearchBar
 		},
-    data () {
-      return {
-        cards: []
-      }
-    },
-    mounted() {
-      //do something after mounting vue instance
-      axios.get('https://littlebird-platform.herokuapp.com/students/')
+		data() {
+			return {
+				cards: []
+			}
+		},
+		mounted() {
+			//do something after mounting vue instance
+			axios.get('https://littlebird-platform.herokuapp.com/students/')
 				.then(response => {
 					this.cards = response.data
 				})
-    }
+		}
 	}
 </script>
 
 <style>
+    #main {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 500;
+    }
 </style>
