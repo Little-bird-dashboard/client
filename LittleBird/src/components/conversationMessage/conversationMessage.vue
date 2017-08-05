@@ -4,12 +4,12 @@
       <div class="col-lg-1">
         <img />
       </div>
-      <div class="col-lg=11">
-        <h4>{{messageData.communication_type}} from {{messageData.first_name}} {{messageData.last_name}}</h4>
+      <div class="col-lg-11">
+        <h6>{{messageData.communication_type}} from {{messageData.first_name}} {{messageData.last_name}}</h6>
         <div class="messageBody">
           {{messageData.raw_body}}
         </div>
-        <small>{{moment(messageData.timestamp).format('MMMM Do')}} at {{moment(messageData.timestamp).format('h:mm a')}}</small>
+        <!-- <small>{{messageDay(messageData.timestamp)}} at {{messageTime(messageData.timestamp)}}</small> -->
       </div>
     </div>
   </div>
@@ -17,14 +17,21 @@
 <script>
 export default {
   name: 'conversationMessage',
-  props: ['messageData']
-  data () {
-
-  }
+  props: ['messageData'],
+  // computed: {
+    // messageDay: function (timestamp){
+    //   return moment(this.messageData.timestamp).format('MMMM Do');
+    // },
+    // messageTime: function (timestamp){
+    //   return moment(this.messageData.timestamp).format('h:mm');
+    // }
+  // }
 }
 </script>
 <style scoped>
 .messageBody{
-  corner-radius:10px;
+  border: 2px solid gray;
+  border-radius:5px;
+  padding: 8px;
 }
 </style>
