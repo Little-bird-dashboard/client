@@ -63,7 +63,7 @@
 	import axios from 'axios'
 	export default {
 		name: 'StudentCard',
-    props: ['studentData'],
+    props: ['studentData','guardianData'],
 		data() {
 			return {
 			}
