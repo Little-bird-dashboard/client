@@ -12,7 +12,7 @@
                         <a><span class="top-align icon" id="cog"><i
                             class="fa fa-cog fa-inverse fa-3x icon" aria-hidden="true"></i></span></a> <a><span
                         class="top-align icon">
-                               <img id="teacher-img" class="icon" width="60" height="60" src="http://pngimg.com/uploads/children/children_PNG18057.png" alt="logo">
+                               <img id="teacher-img" class="icon" src="http://pngimg.com/uploads/children/children_PNG18057.png" alt="logo">
                         </span></a>
                     </div>
                 </div>
@@ -40,8 +40,10 @@
     #teacher-img {
         margin-right: 40px;
         border: 1px solid #333;
-        border-radius: 30px;
+        border-radius: 40px;
         margin-bottom: 10px;
+        width: 60px;
+        height: 60px;
     }
     .icon {
         margin: 5px;
@@ -49,11 +51,9 @@
     #logo {
         margin-left: 20px;
     }
-
     #cog {
         margin-right: 20px;
     }
-
     .top-align {
         margin-top:    auto;
         margin-bottom: auto;
