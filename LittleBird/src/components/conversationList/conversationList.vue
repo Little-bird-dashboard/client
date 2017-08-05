@@ -1,6 +1,8 @@
 <template>
-  <div id="conversationList" v-for="message in messages">
-    <conversationMessage :messageData="message"></conversationMessage>
+  <div>
+    <div id="conversationList" v-for="message in messages">
+      <conversationMessage :messageData="message"></conversationMessage>
+    </div>
   </div>
 </template>
 <script>
@@ -8,13 +10,10 @@ import conversationMessage from '../conversationMessage/conversationMessage'
 
 export default {
   name: 'conversationList',
-  props: ['messages']
+  props: ['messages'],
   components: {
     conversationMessage
   }
-  data () {
-
-  },
 }
 </script>
 <style scoped>
