@@ -4,9 +4,10 @@
         <StudentCard :guardianData="stakehoders" :studentData="student"/>
         <StatusBar/>
       </div>
-      <div class="row conversationList">
+      <div>
         <conversationList :messages="communications"></conversationList>
       </div>
+      <textInput :studentIdentifier="studentId" :studentData="student"></textInput>
     </div>
 </template>
 
@@ -15,13 +16,15 @@
 	import StatusBar from '../components/StatusBar/StatusBar.vue'
 	import StudentCard from '../components/StudentCard/StudentCard.vue'
   import conversationList from '../components/conversationList/conversationList'
+  import textInput from '../components/textInput/textInput'
 
 	export default {
 		name:       'StudentPage',
 		components: {
 			StudentCard,
 			StatusBar,
-      conversationList
+      conversationList,
+      textInput
 		},
     data (){
       return {
@@ -55,7 +58,5 @@
     #StudentPage {
         font-family: 'Open Sans', sans-serif;
     }
-    .conversationList {
-      width: 80%;
-    }
+
 </style>
