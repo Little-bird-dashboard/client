@@ -67,7 +67,12 @@
 		data() {
 			return {
 			}
-		}
+		},
+    computed: {
+      findPrimary: function () {
+        
+      }
+    }
 	};
 
 </script>

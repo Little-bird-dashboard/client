@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="conversationList">
     <div id="conversationList" v-for="message in messages">
       <conversationMessage :messageData="message"></conversationMessage>
     </div>
@@ -17,4 +17,9 @@ export default {
 }
 </script>
 <style scoped>
+.conversationList {
+  width: 80%;
+  height: 80%;
+  overflow: scroll;
+}
 </style>
