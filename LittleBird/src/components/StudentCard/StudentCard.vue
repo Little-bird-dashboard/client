@@ -63,16 +63,11 @@
 	import axios from 'axios'
 	export default {
 		name: 'StudentCard',
-    props: ['studentData','guardianData'],
+    props: ['studentData'],
 		data() {
 			return {
 			}
-		},
-    computed: {
-      findPrimary: function () {
-        
-      }
-    }
+		}
 	};
 
 </script>

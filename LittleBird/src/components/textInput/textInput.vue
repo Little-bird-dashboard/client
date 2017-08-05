@@ -9,16 +9,15 @@
 <script>
 export default {
   name: 'textInput',
-  props: ['teacherData', 'studentId'],
+  props: ['teacherData', 'studentIdentifier'],
   data () {
     return {
-      text: '',
-      studentId:0
+      text: ''
     }
   },
   // methods: {
   //   sendText(input) {
-  //     axios.post(`https://littlebird-platform.herokuapp.com/students/${studentId}/communications`)
+  //     axios.post(`https://littlebird-platform.herokuapp.com/students/${studentIdentifier}/communications`)
   //       .then(response => {
   //         console.log(response)
   //       })
