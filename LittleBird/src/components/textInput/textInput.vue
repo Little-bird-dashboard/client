@@ -1,8 +1,14 @@
 <template>
   <div id="textInput">
-    <form class="form-inline">
-      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" v-model="text">
-      <button type="button" @click="sendText()" class="btn btn-primary">Send Text</button>
+    <form>
+      <div class="row">
+        <div class="col-9">
+          <input type="text" class="form-control" v-model="text">
+        </div>
+        <div class="col-3">
+          <button type="button" @click="sendText()" class="btn btn-primary">Send Text</button>
+        </div>
+      </div>
     </form>
   </div>
 </template>

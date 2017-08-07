@@ -18,8 +18,7 @@ export default {
 </script>
 <style scoped>
 .conversationList {
-  width: 80%;
-  height: 80%;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 </style>

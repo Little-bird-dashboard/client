@@ -4,10 +4,12 @@
         <StudentCard :guardianData="stakeholders" :studentData="student"/>
         <StatusBar/>
       </div>
-      <div>
+      <div class="container">
         <conversationList :messages="communications"></conversationList>
       </div>
-      <textInput :studentIdentifier="studentId" :studentData="student"></textInput>
+      <div class="container">
+        <textInput :studentIdentifier="studentId" :studentData="student"></textInput>
+      </div>
     </div>
 </template>
 
@@ -57,6 +59,10 @@
 <style>
     #StudentPage {
         font-family: 'Open Sans', sans-serif;
+    }
+    .conversations{
+      width: 80%;
+      margin:auto;
     }
 
 </style>
