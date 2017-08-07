@@ -4,6 +4,7 @@
             <div class="container">
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
+                        {{this.studentData.first_name}}
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
