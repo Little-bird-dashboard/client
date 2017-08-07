@@ -30,8 +30,8 @@
       return {
         studentId: this.$route.params.student_id,
         student: {},
-        stakeholders:{},
-        communications: {}
+        stakeholders:[],
+        communications: []
       }
     },
     mounted() {
