@@ -1,7 +1,7 @@
 <template>
     <div id="StudentPage">
       <div>
-        <StudentCard :guardianData="stakehoders" :studentData="student"/>
+        <StudentCard :guardianData="stakeholders" :studentData="student"/>
         <StatusBar/>
       </div>
       <div>
@@ -23,8 +23,8 @@
 		components: {
 			StudentCard,
 			StatusBar,
-      conversationList,
-      textInput
+            conversationList,
+            textInput
 		},
     data (){
       return {
@@ -43,7 +43,7 @@
       axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/stakeholders`)
         .then(response => {
           console.log(response.data)
-          this.stakehoders = response.data
+          this.stakeholders = response.data
         })
       axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/communications`)
         .then(response => {

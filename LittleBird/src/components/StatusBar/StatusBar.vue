@@ -2,14 +2,16 @@
     <div id="StatusBar">
         <nav class="navbar bg-primary">
             <div class="container">
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
+                <div class="row">
+                    <div class="col-lg-4 text-center">
+                        <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <i class="fa fa-paper-plane-o fa-3x cal" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <i class="fa fa-calendar-plus-o fa-3x cal" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -35,5 +37,6 @@
     .cal {
         padding: 20px;
     }
+
 
 </style>
