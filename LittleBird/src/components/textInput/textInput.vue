@@ -15,14 +15,14 @@ export default {
       text: ''
     }
   },
-  // methods: {
-  //   sendText(input) {
-  //     axios.post(`https://littlebird-platform.herokuapp.com/students/${studentIdentifier}/communications`)
-  //       .then(response => {
-  //         console.log(response)
-  //       })
-  //   }
-  // }
+  methods: {
+    sendText(input) {
+      axios.post(`https://littlebird-platform.herokuapp.com/sms/single/${this.studentIdentifier}`, {message:this.text})
+        .then(response => {
+          console.log(response)
+        })
+    }
+  }
 }
 </script>
 <style scoped>
