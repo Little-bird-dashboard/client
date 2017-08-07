@@ -31,22 +31,13 @@
                             <div class="col-lg-6">
                                 <h4>Parent: </h4>
                                 <h5>
-<<<<<<< HEAD
-                                    {{ studentData.guardian_first_name }}
-                                    {{ studentData.guardian_last_name }}
-=======
                                     {{findParent.first_name}}
                                     {{findParent.last_name}}
->>>>>>> guardian name and phone populating
                                 </h5>
                             </div>
                             <div class="col-lg-6">
                                 <h4>Phone: </h4>
-<<<<<<< HEAD
-                                <h5>{{ studentData.guardian_cell }}</h5>
-=======
                                 <h5>{{findParent.cell}}</h5>
->>>>>>> guardian name and phone populating
                             </div>
                         </div>
                     </div>

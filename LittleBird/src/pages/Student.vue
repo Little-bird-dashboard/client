@@ -30,7 +30,7 @@
       return {
         studentId: this.$route.params.student_id,
         student: {},
-        stakehoders:{},
+        stakeholders:{},
         communications: {}
       }
     },
