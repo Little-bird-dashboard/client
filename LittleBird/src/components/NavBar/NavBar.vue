@@ -3,7 +3,7 @@
         <nav class="navbar bg-primary fixed-top">
             <div class="container">
                 <div class="row">
-                    <a href="#"> <img class="icon" width="50" height="43" src="../../assets/logo.png" alt="logo"
+                    <a href="#"> <img class="icon" width="50" height="43" src="../../../static/logo.png" alt="logo"
                         id="logo"></a> <span
                     id="title">Little Bird</span>
                     <div class="navbar-nav pull-right">

@@ -5,12 +5,15 @@
                 <div class="row">
                     <div class="col-lg-4 text-center">
                         <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
+                        {{this.studentData.IEP_deadline}}
                     </div>
                     <div class="col-lg-4 text-center">
                         <i class="fa fa-paper-plane-o fa-3x cal" aria-hidden="true"></i>
+                        Initial Contact: August 9th
                     </div>
                     <div class="col-lg-4 text-center">
-                        <i class="fa fa-calendar-plus-o fa-3x cal" aria-hidden="true"></i>
+                        <i @click="textPage" class="fa fa-calendar-plus-o fa-3x cal" aria-hidden="true"></i>
+                        Initialize IEP Contact
                     </div>
                 </div>
             </div>
@@ -19,17 +22,24 @@
 </template>
 
 <script>
+	import axios from 'axios'
 	export default {
 		name:    'StatusBar',
-		props:   ['studentData'],
+		props:   ['studentData', 'messageData'],
 		data() {
 			return {}
 		},
+		methods: {
+			textPage() {
+				axios.post(`https://littlebird-platform.herokuapp.com/sms/initiate/${this.studentData.id}`)
+                    .then(response => {
+						this.cards = response.data
+					})
+			}
+		},
 		mounted() {
 			//do something after mounting vue instance
-			// console.log(this.studentData)
-		},
-		methods: {}
+		}
 	}
 </script>
 
@@ -37,6 +47,4 @@
     .cal {
         padding: 20px;
     }
-
-
 </style>
