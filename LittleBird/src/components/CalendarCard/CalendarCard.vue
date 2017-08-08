@@ -1,6 +1,6 @@
 <template>
-    <div class="col-lg-3">
-        <div class="card card-block">
+    <div class="card card-block col-lg-2 col-md-2 col-sm-2">
+        <div>
             <h4>{{dayData.day}}</h4>
             <h4>at {{dayData.time}}</h4>
         </div>

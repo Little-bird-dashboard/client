@@ -6,34 +6,28 @@
                 <CalendarHeaderCard :studentData="student" class="offset-lg-1 CalendarCard"></CalendarHeaderCard>
                 <div class="card">
                     <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card" style="width: 20rem;">
-                                <div class="card-block">
-                                    <div class="row">
-                                        <div class="col-lg-10">
-                                            <h4 class="card-title text-center">week</h4>
-                                        </div>
-                                    </div>
+                      <h3 class='container'>For the week of {{schedule.weekstart}}, what times are you available to meet?</h3>
+                          <div class="stakeholderList col-lg-2 col-md-2 col-sm-2">
+                            <div class="spacer">
+                              <h4>a</h4>
+                              <h4>a</h4>
+                            </div>
+                              <div v-for="stakeholder in stakeholderList">
+                                  <StakeholderCard :stakeholderData="stakeholder"></StakeholderCard>
+                              </div>
+                          </div>
 
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="container-fluid scheduleCards">
+                              <div class="row flex-row flex-nowrap">
+                                <div v-for="day in schedule.available">
+                                  <CalendarCard :dayData="day"
+                                      :stakeholdersData="stakeholderList" class="calendarCard"></CalendarCard>
                                 </div>
-                                <div class="stakeholderList col-lg-8">
-                                    <div v-for="stakeholder in stakeholderList">
-                                        <StakeholderCard :stakeholderData="stakeholder"></StakeholderCard>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="container-fluid scheduleCards">
-                                    <h3>For the week of {{schedule.weekstart}}, what times are you available to meet?</h3>
-                                    <div class="row flex-row flex-nowrap" v-for="day in schedule.available">
-                                        <CalendarCard :dayData="day"
-                                            :stakeholdersData="stakeholderList"></CalendarCard>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
                 </div>
             </div>
         </div>
@@ -134,8 +128,14 @@
         width: 20%;
     }
 
-    .scheduleCards {
+    /*.scheduleCards {
         overflow-x: scroll;
         overflow-y: visible;
+    }*/
+    .calendarCard {
+      width: 20vh;
+    }
+    .spacer {
+      color: white;
     }
 </style>

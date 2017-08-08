@@ -6,7 +6,7 @@
                     <div class="col-lg-2">
                         <div class="row">
                             <div class="col-lg-2">
-                                <img id="studentPicture" width="120" height="120" v-bind:src="studentData.profile_img"/>
+                                <img id="studentPicture" width="auto" height="120" v-bind:src="studentData.profile_img"/>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
 
 <style>
     #studentPicture {
-        border-radius: 60px;
+        clip-path:circle(60px at center);
     }
 
     h4, h5 {
