@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>little-bird</title>
+    <title>Little Bird</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -11,6 +11,17 @@
 <body>
 <div id="app"></div>
 <!-- built files will be auto injected -->
-
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+	var config = {
+		apiKey:            "AIzaSyCmnlj1fgrvW3u8x84gnErR4xBsV1OkJQY",
+		authDomain:        "little-bird-12c42.firebaseapp.com",
+		databaseURL:       "https://little-bird-12c42.firebaseio.com",
+		projectId:         "little-bird-12c42",
+		storageBucket:     "",
+		messagingSenderId: "974851320377"
+	};
+	firebase.initializeApp(config);
+</script>
 </body>
 </html>
