@@ -18,12 +18,12 @@
                         <div class="row">
                             <div class="col-lg-6">
                            <span>
-                               <h4>Student ID: </h4><h5>{{studentData.student_id}}</h5>
+                               <h4>Student ID: </h4><h5>{{ studentData.student_id }}</h5>
                            </span>
                             </div>
                             <div class="col-lg-6">
                              <span>
-                               <h4>Grade: </h4><h5>{{studentData.grade_name}}</h5>
+                               <h4>Grade: </h4><h5>{{ studentData.grade_name }}</h5>
                            </span>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <h4>Phone: </h4>
-                                <h5>{{findParent.cell}}</h5>
+                                <h5>{{formatCell}}</h5>
                             </div>
                         </div>
                     </div>
@@ -78,6 +78,9 @@
           return this.guardianData.filter(guardian => {
             return guardian.stakeholder_type_id == 2;
           })[0]
+        },
+        formatCell:function(){
+          return this.findParent.cell.substring(2).replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
         }
       }
 	};
