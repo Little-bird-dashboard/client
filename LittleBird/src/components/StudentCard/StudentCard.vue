@@ -3,7 +3,6 @@
         <div class="card-block">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-2">
                         <div class="row">
                             <img id="studentPicture" width="120" height="120" v-bind:src="studentData.profile_img"/>
