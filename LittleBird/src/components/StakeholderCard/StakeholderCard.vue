@@ -1,8 +1,8 @@
 <template>
   <div id="StakeholderCard">
-    <p>
+    <h4 class="text-right">
       {{stakeholderData.first_name}} {{stakeholderData.last_name}}
-    </p>
+    </h4>
   </div>
 </template>
 <script>
@@ -15,4 +15,8 @@ export default {
 }
 </script>
 <style scoped>
+  #StakeholderCard{
+    height: 68px;
+    padding-top: 15px;
+  }
 </style>

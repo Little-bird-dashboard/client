@@ -1,10 +1,10 @@
 <template>
   <div id="availableCard">
-      <p @click="switchChecked" v-show="!checked">
-        <i class="fa fa-times-circle red" aria-hidden="true"></i>
+      <p @click="switchChecked" v-show="!checked" class="text-center">
+        <i class="fa fa-times-circle fa-4x red" aria-hidden="true"></i>
       </p>
-      <p v-show="checked" @click="switchChecked">
-        <i class="fa fa-check-circle green"  aria-hidden="true"></i>
+      <p v-show="checked" @click="switchChecked" class="text-center">
+        <i class="fa fa-check-circle fa-4x green"  aria-hidden="true"></i>
       </p>
   </div>
 </template>
@@ -32,6 +32,6 @@ export default {
     color: green;
   }
   #availableCard {
-    border: 1px solid;
+    border-top: 1px solid gray;
   }
 </style>
