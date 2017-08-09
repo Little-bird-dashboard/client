@@ -17,7 +17,7 @@
 <script>
 	export default {
 		name:    'textInput',
-		props:   ['teacherData', 'studentIdentifier'],
+		props:   ['teacherData', 'studentIdentifier', 'addTextToList'],
 		data() {
 			return {
 				text: ''
@@ -27,9 +27,20 @@
 			sendText() {
 				axios.post(`https://littlebird-platform.herokuapp.com/sms/single/${this.studentIdentifier}`, { message: this.text })
 					.then(response => {
-						console.log(response)
+						this.addText(response.data[0]);
 					})
-			}
+			},
+      addText(data) {
+        this.addTextToList({
+          stakeholder_type: 'Special Education Coordinator',
+          communication_type: '',
+          first_name:'Jaclyn',
+          last_name:'Moore',
+          raw_body: data.raw_body,
+          timestamp: new Date(),
+          communication_type: 'text'
+        })
+      }
 		}
 	}
 </script>

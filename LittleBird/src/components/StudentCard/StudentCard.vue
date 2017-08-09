@@ -71,7 +71,7 @@
 		},
 		mounted() {
 			//do something after mounting vue instance
-			console.log(this.guardianData)
+
 		},
 		computed:
 		       {

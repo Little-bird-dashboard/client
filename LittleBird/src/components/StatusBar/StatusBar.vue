@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-lg-4 text-center">
                         <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
-                        {{this.studentData.IEP_deadline}}
+                        {{this.studentData.IEP_deadline | moment("MMMM Do YYYY")}}
                     </div>
-                    <div class="col-lg-4 text-center">
+                    <div @click="followUpText" class="col-lg-4 text-center">
                         <i class="fa fa-paper-plane-o fa-3x cal" aria-hidden="true"></i>
                         Initial Contact: August 9th
                     </div>
@@ -35,7 +35,10 @@
                     .then(response => {
 						this.cards = response.data
 					})
-			}
+			},
+      followUpText() {
+        axios.post(`https://littlebird-platform.herokuapp.com/sms/confirm/${this.studentData.id}`)
+      }
 		},
 		mounted() {
 			//do something after mounting vue instance

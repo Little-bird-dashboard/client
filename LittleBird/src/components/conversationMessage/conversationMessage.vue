@@ -9,7 +9,7 @@
                 <div class="messageBody">
                     {{messageData.raw_body}}
                 </div>
-                <!-- <small>{{messageDay(messageData.timestamp)}} at {{messageTime(messageData.timestamp)}}</small> -->
+                <small>{{makeDateTime | moment("MMMM Do YYYY")}} at {{makeDateTime | moment("h:mm:ss a")}}</small>
             </div>
         </div>
     </div>
@@ -19,19 +19,15 @@
 		name:     'conversationMessage',
 		props:    ['messageData'],
 		computed: {
-			messageDay:  function (timestamp) {
-				return moment(this.messageData.timestamp).format('MMMM Do');
-			},
-			messageTime: function (timestamp) {
-				return moment(this.messageData.timestamp).format('h:mm');
-			},
+      makeDateTime(){
+        return new Date(Number(this.messageData.timestamp));
+      },
 			selectIcon() {
 				switch (this.messageData.stakeholder_type) {
 					case 'Special Education Coordinator':
 						return '../../../static/user_icon.png'
 						break;
 					case 'Primary Guardian':
-						console.log('found primary')
 						return '../../../static/guardian_icon.png'
 						break;
 					case 'School Administrator':
@@ -53,7 +49,6 @@
 						return '../../../static/admin_icon.png'
 						break;
 					case 'Little Bird':
-						console.log('found little bird')
 						return '../../../static/littlebird_icon.png'
 						break;
 					case 'Additional Guardian':
@@ -63,7 +58,7 @@
 						return '../../../static/medical_icon.png'
 						break;
 				}
-			}
+			},
 		}
 	}
 </script>

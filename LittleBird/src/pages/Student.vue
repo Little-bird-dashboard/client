@@ -8,7 +8,7 @@
             <conversationList :messages="communications"></conversationList>
         </div>
         <div class="container">
-            <textInput :studentIdentifier="studentId" :studentData="student"></textInput>
+            <textInput :studentIdentifier="studentId" :studentData="student" :addTextToList="addTextToList"></textInput>
         </div>
     </div>
 </template>
@@ -39,20 +39,22 @@
 		mounted() {
 			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}`)
 				.then(response => {
-					console.log(response.data)
 					this.student = response.data[0]
 				})
 			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/stakeholders`)
 				.then(response => {
-					console.log(response.data)
 					this.stakeholders = response.data
 				})
 			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/communications`)
 				.then(response => {
-					console.log(response.data)
 					this.communications = response.data
 				})
-		}
+		},
+    methods: {
+      addTextToList(message) {
+        this.communications.push(message)
+      }
+    }
 	}
 </script>
 

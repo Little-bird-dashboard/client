@@ -17,7 +17,7 @@ export default {
 }
 </script>
 <style scoped>
-.conversationList {
+#conversationList {
   overflow-y: scroll;
   overflow-x: hidden;
 }
