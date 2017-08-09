@@ -33,12 +33,12 @@
       addText(data) {
         this.addTextToList({
           stakeholder_type: 'Special Education Coordinator',
-          communication_type: '',
           first_name:'Jaclyn',
           last_name:'Moore',
           raw_body: data.raw_body,
           timestamp: new Date(),
-          communication_type: 'text'
+          communication_type: 'text',
+          stakeholder_id: 1
         })
         this.text = '';
       }
