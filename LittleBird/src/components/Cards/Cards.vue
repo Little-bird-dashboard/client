@@ -17,7 +17,7 @@
       </p></span>
         </div>
         <div class="card-group-item">
-            <p><i class="fa fa-list-alt" aria-hidden="true"> </i> {{ review_date_text }}  {{ cardData.IEP_deadline }}
+            <p><i class="fa fa-list-alt" aria-hidden="true"> </i> {{ review_date_text }}  {{ cardData.IEP_deadline | moment("MMM Do YYYY") }}
             </p>
         </div>
         <hr>

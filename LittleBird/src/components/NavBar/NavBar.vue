@@ -12,7 +12,7 @@
                         <a><span class="top-align icon" id="cog"><i
                             class="fa fa-cog fa-inverse fa-3x icon" aria-hidden="true"></i></span></a> <a><span
                         class="top-align icon">
-                               <img id="teacher-img" class="icon" src="http://pngimg.com/uploads/children/children_PNG18057.png" alt="logo">
+                               <img id="teacher-img" class="icon" src="http://www.nea.org/assets/img/content/TeacherDay2017-CarouselLilysblog.png" alt="logo">
                         </span></a>
                     </div>
                 </div>
@@ -39,10 +39,9 @@
     }
     #teacher-img {
         margin-right: 40px;
-        border: 1px solid #333;
-        border-radius: 40px;
+        clip-path:circle(30px at 30px);
         margin-bottom: 10px;
-        width: 60px;
+        width: auto;
         height: 60px;
     }
     .icon {
