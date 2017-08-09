@@ -52,7 +52,8 @@
 		},
     methods: {
       addTextToList(message) {
-        this.communications.push(message)
+        this.communications.push(message);
+        console.log('Success!')
       }
     }
 	}

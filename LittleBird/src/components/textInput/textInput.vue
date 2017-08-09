@@ -40,6 +40,7 @@
           timestamp: new Date(),
           communication_type: 'text'
         })
+        this.text = '';
       }
 		}
 	}
