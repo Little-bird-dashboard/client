@@ -65,7 +65,7 @@
 			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/stakeholders`)
 				.then(response => {
 					this.stakeholderList = response.data.filter(stakeholder => {
-						return stakeholder.stakeholder_type != "Primary Guardian" && stakeholder.stakeholder_type != "Additional Guardian"
+						return stakeholder.stakeholder_type != "Primary Guardian" && stakeholder.stakeholder_type != "Additional Guardian" && stakeholder.stakeholder_type != "Little Bird"
 					})
 				})
 			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}`)
