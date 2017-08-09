@@ -35,7 +35,7 @@ export default new Router({
 			name: 'StudentPage',
 			component: Student
 		}, {
-			path: '/schedule',
+			path: '/schedule/:student_id',
 			name: 'CalendarPoll',
 			component: CalendarPoll
 		}

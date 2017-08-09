@@ -50,7 +50,7 @@
 		},
 		data() {
 			return {
-				studentId:       1,
+				studentId:       this.$route.params.student_id,
 				stakeholderList: [],
 				student:         {},
 				schedule:
