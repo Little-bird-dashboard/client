@@ -26,6 +26,7 @@
                                 </div>
                               </div>
                           </div>
+                          <router-link :to="{ name: 'StudentPage', params: { student_id: student.id}}"><button type='button' class='btn btn-lg btn-default btn-primary'>Submit</button></router-link>
                       </div>
                       </div>
                 </div>
@@ -56,32 +57,7 @@
 				schedule:
 				                 {
 					                 weekstart: 'August 28, 2017',
-					                 available: [
-						                 {
-							                 day:  'Monday',
-							                 time: '9 am'
-						                 },
-						                 {
-							                 day:  'Monday',
-							                 time: '10 am'
-						                 },
-						                 {
-							                 day:  'Monday',
-							                 time: '11 am'
-						                 },
-						                 {
-							                 day:  'Wednesday',
-							                 time: '9 am'
-						                 },
-						                 {
-							                 day:  'Wednesday',
-							                 time: '10 am'
-						                 },
-						                 {
-							                 day:  'Wednesday',
-							                 time: '11 am'
-						                 }
-					                 ]
+					                 available: []
 				                 }
 			}
 		},
@@ -96,6 +72,10 @@
 				.then(response => {
 					this.student = response.data[0];
 				})
+      axios.get(`https://littlebird-platform.herokuapp.com/schedule/${this.studentId}`)
+        .then(response => {
+          this.schedule.available = response.data;
+        })
 		},
 		methods:    {
 			dayCounter: function (day) {
