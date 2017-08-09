@@ -56,7 +56,7 @@
 				student:         {},
 				schedule:
 				                 {
-					                 weekstart: 'August 28, 2017',
+					                 weekstart: 'September 4, 2017',
 					                 available: []
 				                 }
 			}
