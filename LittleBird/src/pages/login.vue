@@ -33,11 +33,12 @@ export default {
   },
   methods: {
     login() {
-      console.log(this.user)
       axios.post('https://littlebird-platform.herokuapp.com/auth/login', this.user)
       .then(response => {
         localStorage.token = response.token;
-        this.$route.router.go('/dashboard')
+
+        this.$router.router.push('/dashboard')
+
       })
       .catch(err => {
         alert(err);
