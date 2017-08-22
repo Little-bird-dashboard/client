@@ -40,8 +40,9 @@
 <style>
     .card-group {
         border: 1px solid #333;
+        border-radius: 5px;
+        margin: 10px;
     }
-
     img {
         width:         50px;
         height:        50px;

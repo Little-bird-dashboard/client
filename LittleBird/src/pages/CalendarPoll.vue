@@ -1,12 +1,13 @@
 <template>
     <div class="container-fluid">
         <div class="row flex-row flex-nowrap">
-            <NavBar/>
+            <!-- <NavBar/> -->
             <div class="container-fluid">
                 <CalendarHeaderCard :studentData="student" class="offset-lg-1 CalendarCard"></CalendarHeaderCard>
                 <div class="card">
                     <div class="row">
                       <h3 class='container'>For the week of {{schedule.weekstart}}, what times are you available to meet?</h3>
+
                           <div class="stakeholderList col-lg-2 col-md-2 col-sm-2">
                             <div class="spacer">
                               <h4>a</h4>
@@ -18,9 +19,9 @@
                           </div>
 
                       <div class="col-lg-10 col-md-10 col-sm-10">
-                          <div class="container-fluid scheduleCards">
-                              <div class="row flex-row flex-nowrap">
-                                <div v-for="day in schedule.available">
+                          <div class="container-fluid">
+                              <div class="row flex-row flex-nowrap scheduleCards">
+                                <div v-for="day in schedule.available" class="card card-block col-lg-2 col-md-2 col-sm-2">
                                   <CalendarCard :dayData="day"
                                       :stakeholdersData="stakeholderList" class="calendarCard"></CalendarCard>
                                 </div>
@@ -28,7 +29,8 @@
                           </div>
                           <router-link :to="{ name: 'StudentPage', params: { student_id: student.id}}"><button type='button' class='btn btn-lg btn-default btn-primary'>Submit</button></router-link>
                       </div>
-                      </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -108,10 +110,10 @@
         width: 20%;
     }
 
-    /*.scheduleCards {
+    .scheduleCards {
         overflow-x: scroll;
         overflow-y: visible;
-    }*/
+    }
     .calendarCard {
       width: 20vh;
     }
