@@ -13,7 +13,7 @@
         </div>
         <div class="card-group-item">
       <span>
-      <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  {{ cardData.last_contact }}
+      <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  {{ cardData.last_communication | moment("MMM Do YYYY") }}
       </p></span>
         </div>
         <div class="card-group-item">
