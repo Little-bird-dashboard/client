@@ -46,14 +46,14 @@
                     <div class="col-lg-3">
                         <div class="row">
                             <div class="col-lg-3 pull-right text-center">
-                                <i class="fa fa-times fa-3x" aria-hidden="true"></i>
+                                <router-link :to="{path:'/dashboard'}"><i class="fa fa-times fa-3x" aria-hidden="true"></i></router-link>
                             </div>
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-lg-4 pull-right text-center">
                                 <button class="btn btn-success h2">edit notes</button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
