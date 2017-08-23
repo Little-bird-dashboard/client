@@ -4,14 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 text-center">
-                      <router-link :to="{
-                	       name: 'CalendarPoll',
-                	        params: {
-                		          student_id: studentData.id
-                	           }
-                           }">
                         <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
-                      </router-link>
                         {{this.studentData.IEP_deadline | moment("MMMM Do YYYY")}}
                     </div>
                     <div @click="followUpText" class="col-lg-4 text-center">
