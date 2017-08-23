@@ -38,6 +38,7 @@ export default {
         console.log(response)
         localStorage.token = response.data.token;
         this.$router.push('/dashboard')
+
       })
       .catch(err => {
         alert(err);
