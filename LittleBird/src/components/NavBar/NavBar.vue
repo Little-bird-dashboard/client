@@ -7,18 +7,15 @@
                         id="logo"></a> <span
                     id="title">Little Bird</span>
                     <div class="navbar-nav pull-right">
-                      <button type="button" class="btn btn-primary" @click="showCustomModal = true"><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></button>
-                        <!--
-                        <a><span class="top-align icon" id="cog"><i
-                            class="fa fa-cog fa-inverse fa-3x icon" aria-hidden="true"></i></span></a> <a><span
-                        class="top-align icon"> -->
+                      <!-- <button type="button" class="btn btn-primary" @click="showCustomModal = true"><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></button> -->
                                <img id="teacher-img" class="icon" src="../../../static/teacher.jpg" alt="logo">
                         </span></a>
                     </div>
                 </div>
             </div>
         </nav>
-        <modal :show.sync="showCustomModal" effect="fade" width="400">
+        <!-- ADD STUDENT MODAL -->
+        <!-- <modal :show.sync="showCustomModal" effect="fade" width="400">
           <div slot="modal-header" class="modal-header">
             <h4 class="modal-title">
               Add Student
@@ -33,7 +30,7 @@
             <button type="button" class="btn btn-default" @click="showCustomModal = false">Exit</button>
             <button type="button" class="btn btn-success" @click="addStudent">Add Student</button>
           </div>
-        </modal>
+        </modal> -->
     </div>
 </template>
 

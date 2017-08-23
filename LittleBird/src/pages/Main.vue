@@ -2,7 +2,7 @@
     <div id="main">
         <div class="container">
             <Navigation/>
-            <!-- <SearchBar/> -->
+            <SearchBar/>
             <div class="row">
                 <div v-for="card in cards">
                     <Cards :cardData="card"></Cards>
