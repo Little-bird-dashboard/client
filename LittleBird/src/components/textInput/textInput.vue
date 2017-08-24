@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="container">
                     <div class="col-lg-8 offset-lg-2">
-                        <input id="text-input" type="text" class="form-control" v-model="text">
+                        <input id="text-input" type="text" class="form-control" v-model="text" v-on:keyup.enter="sendText">
                     </div>
                     <div class="col-lg-2">
                         <button id="input-btn" type="button" @click="sendText" class="btn btn-primary">Send Text</button>
@@ -31,6 +31,7 @@
 					})
 			},
       addText(data) {
+        event.preventDefault()
         this.addTextToList({
           stakeholder_type: 'Special Education Coordinator',
           first_name:'Jaclyn',

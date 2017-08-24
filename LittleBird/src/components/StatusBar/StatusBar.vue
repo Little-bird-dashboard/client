@@ -8,11 +8,11 @@
                         {{this.studentData.IEP_deadline | moment("MMMM Do YYYY")}}
                     </div>
                     <div @click="followUpText" class="col-lg-4 text-center">
-                        <i class="fa fa-paper-plane-o fa-3x cal" aria-hidden="true"></i>
+                        <i class="fa fa-paper-plane-o fa-3x cal pointer" aria-hidden="true"></i>
                         Initial Contact: August 9th
                     </div>
                     <div class="col-lg-4 text-center">
-                        <i @click="textPage" class="fa fa-calendar-plus-o fa-3x cal" aria-hidden="true"></i>
+                        <i @click="textPage" class="fa fa-calendar-plus-o fa-3x cal pointer" aria-hidden="true"></i>
                         Initialize IEP Contact
                     </div>
                 </div>
@@ -52,5 +52,8 @@
     }
     .fa-calendar {
       color:white;
+    }
+    .pointer {
+      cursor: pointer;
     }
 </style>

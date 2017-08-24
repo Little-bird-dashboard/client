@@ -40,6 +40,9 @@
                             <div class="col-lg-6">
                                 <h4>Phone: </h4>
                                 <h5>{{formatCell}}</h5>
+                                <p @click="showModal = true" class="editLink" :class="{ 'hidden' : studentData.id == 1}">
+                                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Phone Number
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -51,28 +54,67 @@
                         </div>
                         <!-- <div class="row">
                             <div class="col-lg-4 pull-right text-center">
-                                <button class="btn btn-success h2">edit notes</button>
+                                <button class="btn btn-success h2">Edit</button>
                             </div>
                         </div> -->
                     </div>
                 </div>
             </div>
         </div>
+        <modal :show.sync="showModal" small>
+          <div slot="modal-body" class="modal-body container">
+            <div class="form-group" :class="{'has-error' : phoneBlur && isEmpty(editPhone)}">
+              <input type="tel" name="" placeholder="Cell number" @keyup.enter="submitPhone" @blur="phoneBlur = true" v-model="editPhone">
+            </div>
+          </div>
+          <div slot="modal-footer" class="modal-footer">
+            <button type="button" class="btn btn-default" @click="showModal = false">Exit</button>
+            <button type="button" class="btn btn-success" @click="formatPhone">Submit</button>
+          </div>
+        </modal>
     </div>
 </template>
 
 <script>
+import { modal } from 'vue-strap'
 
 	export default {
 		name:  'StudentCard',
 		props: ['studentData', 'guardianData'],
+    components: {
+      modal
+    },
 		data() {
-			return {}
+			return {
+        showModal: false,
+        editPhone: '',
+        phoneBlur: false
+      }
 		},
 		mounted() {
 			//do something after mounting vue instance
-
 		},
+    methods: {
+      formatPhone () {
+        let phone = this.editPhone.replace(/[^0-9]/g, "");
+        return `+1${phone}`;
+      },
+      submitPhone () {
+        event.preventDefault();
+        this.showModal = false;
+        axios.put(`https:/littlebird-platform.herokuapp.com/students/${this.studentData.id}`, this.formatPhone())
+        .then(response => {
+          console.log(response);
+        })
+        .catch(err => {
+          alert(err);
+        })
+        this.editPhone = ''
+      },
+      isEmpty (value) {
+        return value.trim() === '';
+      }
+    },
 		computed:
 		       {
 			       findParent: function () {
@@ -95,5 +137,12 @@
 
     h4, h5 {
         display: inline;
+    }
+    .editLink {
+      color: red;
+      cursor: pointer;
+    }
+    .hiddent {
+      display: none;
     }
 </style>
