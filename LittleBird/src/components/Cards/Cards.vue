@@ -13,7 +13,7 @@
         </div>
         <div class="card-group-item">
       <span>
-      <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  {{ makeDateTime | moment("MMM Do YYYY") }}
+      <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  {{ contact == null ? "None" : makeDateTime | moment("MMM Do YYYY")  }}
       </p></span>
         </div>
         <div class="card-group-item">
@@ -31,20 +31,16 @@
 		data() {
 			return {
 				last_contact_text: 'Last Contact: ',
-				review_date_text:  'Review Date: '
+				review_date_text:  'Review Date: ',
+        contact_date: this.cardData.last_communication
 			}
 		},
     computed: {
       makeDateTime(){
-        let contact = this.cardData.last_communication;
-        if(!contact){
-          return 0;
-        }else{
-          return new Date(Number(this.cardData.last_communication));
+          return new Date(Number(contact));
         }
       }
     }
-	}
 </script>
 
 <style>

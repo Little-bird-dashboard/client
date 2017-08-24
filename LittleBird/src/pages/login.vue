@@ -7,16 +7,18 @@
     </div>
     <div class="loginForm container">
       <div class="row justify-content-center">
-        <div class="col-lg-12 margin-top input">
-          <div class="input-group">
-            <input type="text" name="email" class="form-control" aria-label="Text input for email" placeholder="Email" v-model="user.email">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="margin-top input">
+            <div class="form-group" :class="{ 'has-error': isEmpty(user.email) && blur.email}">
+              <input type="text" name="email" class="form-control" aria-label="Text input for email" placeholder="Email" v-model="user.email" @blur="blur.email = true">
+            </div>
           </div>
-        </div>
-        <div class="col-lg-12 margin-top input">
-          <div class="input-group">
-            <input type="password" name="password" class="form-control" aria-label="Text input for password" placeholder="Password" v-model="user.password">
+          <div class="margin-top input">
+            <div class="form-group" :class="{ 'has-error': isEmpty(user.password) && blur.password}">
+              <input type="password" name="password" class="form-control" aria-label="Text input for password" placeholder="Password" v-model="user.password" @blur="blur.password = true">
+            </div>
+          <button type="button" class="input btn btn-primary margin-top" @click="login">Login</button>
           </div>
-        <button type="button" class="input btn btn-primary margin-top col-lg-12" @click="login">Login</button>
       </div>
     </div>
     </div>
@@ -26,23 +28,39 @@
 export default {
   name: "login",
   data() {
-    return {user: {
+    return {
+      user: {
       email: '',
       password: ''
-    }}
+    },
+    blur: {
+      email: false,
+      password: false
+    }
+  }
   },
   methods: {
     login() {
+      if (this.isEmpty(this.user.email) || this.isEmpty(this.user.password)) {
+       alert('Please fill out all fields.')
+      } else if (!this.validEmail(this.user.email)){
+        alert('Not a valid email address.');
+      } else {
       axios.post('https://littlebird-platform.herokuapp.com/auth/login', this.user)
       .then(response => {
-        console.log(response)
         localStorage.token = response.data.token;
         this.$router.push('/dashboard')
-
       })
       .catch(err => {
         alert(err);
-      })
+      })}
+    },
+    isEmpty (value) {
+      return value.trim() === ''
+    },
+    validEmail (value) {
+      const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      return typeof value == 'string' && value.trim() != '' && emailRegex.test(value);
     }
   }
 }
