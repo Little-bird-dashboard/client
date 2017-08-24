@@ -1,15 +1,14 @@
 <template>
     <div id="textInput">
         <form>
-            <div class="row">
-                <div class="container">
-                    <div class="col-lg-8 offset-lg-2">
+            <div class="row topMargin">
+                    <div class="col-xs-9 col-xs-offset-1">
                         <input id="text-input" type="text" class="form-control" v-model="text" v-on:keyup.enter="sendText">
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-xs-2">
                         <button id="input-btn" type="button" @click="sendText" class="btn btn-primary">Send Text</button>
                     </div>
-                </div>
+
             </div>
         </form>
     </div>
@@ -47,12 +46,14 @@
 	}
 </script>
 <style scoped>
-    #text-input {
-        margin-left: 140px;
+
+    .topMargin{
+
         margin-top: 10px;
     }
-    #input-btn {
-        margin-left: 140px;
-        margin-top: 10px;
+    .flexbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 </style>

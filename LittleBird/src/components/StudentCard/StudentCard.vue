@@ -6,11 +6,11 @@
                     <div class="col-lg-2">
                         <div class="row">
                             <div class="col-lg-2">
-                                <img id="studentPicture" width="auto" height="120" v-bind:src="studentData.profile_img"/>
+                                <img id="studentPicture" v-bind:src="studentData.profile_img"/>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" v-if="studentData && findParent">
                         <div class="row">
                             <div class="col-lg-12">
                                 <h1>
@@ -39,7 +39,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <h4>Phone: </h4>
-                                <h5>{{formatCell}}</h5>
+                                <h5>{{parentCell}}</h5>
                                 <p @click="showModal = true" class="editLink" :class="{ 'hidden' : studentData.id == 1}">
                                   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Phone Number
                                 </p>
@@ -88,7 +88,8 @@ import { modal } from 'vue-strap'
 			return {
         showModal: false,
         cell: '',
-        phoneBlur: false
+        phoneBlur: false,
+        parentCell: this.formatCell
       }
 		},
 		mounted() {
@@ -106,7 +107,7 @@ import { modal } from 'vue-strap'
         console.log("this")
         axios.put(`https:/littlebird-platform.herokuapp.com/students/${this.studentData.id}`, {cell: this.formatPhone()})
         .then(response => {
-          console.log(response);
+          this.parentCell = response.data.guardian[0].cell;
         })
         .catch(err => {
           alert(err);
@@ -135,6 +136,8 @@ import { modal } from 'vue-strap'
 <style>
     #studentPicture {
         clip-path:circle(60px at center);
+        width: 120px;
+        height: auto;
     }
 
     h4, h5 {

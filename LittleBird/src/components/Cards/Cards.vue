@@ -13,11 +13,11 @@
         </div>
         <div class="card-group-item">
       <span>
-      <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  {{ contact == null ? "None" : makeDateTime | moment("MMM Do YYYY")  }}
+      <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  {{ contact_date == null ? "None" : makeDateTime | formatDate  }}
       </p></span>
         </div>
         <div class="card-group-item">
-            <p><i class="fa fa-list-alt" aria-hidden="true"> </i> {{ review_date_text }}  {{ cardData.IEP_deadline | moment("MMM Do YYYY") }}
+            <p><i class="fa fa-list-alt" aria-hidden="true"> </i> {{ review_date_text }}  {{ cardData.IEP_deadline | formatDate }}
             </p>
         </div>
         <hr>
@@ -37,9 +37,14 @@
 		},
     computed: {
       makeDateTime(){
-          return new Date(Number(contact));
+          return new Date(Number(this.contact_date));
         }
+      },
+    filters: {
+      formatDate(date) {
+        return date
       }
+    }
     }
 </script>
 
