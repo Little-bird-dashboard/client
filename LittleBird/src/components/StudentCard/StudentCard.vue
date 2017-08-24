@@ -63,13 +63,13 @@
         </div>
         <modal :show.sync="showModal" small>
           <div slot="modal-body" class="modal-body container">
-            <div class="form-group" :class="{'has-error' : phoneBlur && isEmpty(editPhone)}">
-              <input type="tel" name="" placeholder="Cell number" @keyup.enter="submitPhone" @blur="phoneBlur = true" v-model="editPhone">
+            <div class="form-group" :class="{'has-error' : phoneBlur && isEmpty(cell)}">
+              <input type="tel" name="" placeholder="Cell number" @keyup.enter="submitPhone" @blur="phoneBlur = true" v-model="cell">
             </div>
           </div>
           <div slot="modal-footer" class="modal-footer">
             <button type="button" class="btn btn-default" @click="showModal = false">Exit</button>
-            <button type="button" class="btn btn-success" @click="formatPhone">Submit</button>
+            <button type="button" class="btn btn-primary" @click="submitPhone">Submit</button>
           </div>
         </modal>
     </div>
@@ -87,7 +87,7 @@ import { modal } from 'vue-strap'
 		data() {
 			return {
         showModal: false,
-        editPhone: '',
+        cell: '',
         phoneBlur: false
       }
 		},
@@ -96,20 +96,22 @@ import { modal } from 'vue-strap'
 		},
     methods: {
       formatPhone () {
-        let phone = this.editPhone.replace(/[^0-9]/g, "");
+        let phone = this.cell.replace(/[^0-9]/g, "");
+        console.log(phone)
         return `+1${phone}`;
       },
       submitPhone () {
         event.preventDefault();
         this.showModal = false;
-        axios.put(`https:/littlebird-platform.herokuapp.com/students/${this.studentData.id}`, this.formatPhone())
+        console.log("this")
+        axios.put(`https:/littlebird-platform.herokuapp.com/students/${this.studentData.id}`, {cell: this.formatPhone()})
         .then(response => {
           console.log(response);
         })
         .catch(err => {
           alert(err);
         })
-        this.editPhone = ''
+        this.cell = ''
       },
       isEmpty (value) {
         return value.trim() === '';
