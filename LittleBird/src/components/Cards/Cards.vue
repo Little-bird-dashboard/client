@@ -12,12 +12,15 @@
             </router-link>
         </div>
         <div class="card-group-item">
-      <span>
-      <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  {{ contact_date == null ? "None" : makeDateTime | formatDate  }}
-      </p></span>
+          <span v-if="!contact_date">
+            <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  None
+          </p></span>
+          <span v-else>
+            <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  {{ makeDateTime | moment("MMM Do YYYY") }}
+          </p></span>
         </div>
         <div class="card-group-item">
-            <p><i class="fa fa-list-alt" aria-hidden="true"> </i> {{ review_date_text }}  {{ cardData.IEP_deadline | formatDate }}
+            <p><i class="fa fa-list-alt" aria-hidden="true"> </i> {{ review_date_text }}  {{ cardData.IEP_deadline | moment("MMM Do YYYY") }}
             </p>
         </div>
         <hr>
@@ -39,12 +42,7 @@
       makeDateTime(){
           return new Date(Number(this.contact_date));
         }
-      },
-    filters: {
-      formatDate(date) {
-        return date
       }
-    }
     }
 </script>
 
