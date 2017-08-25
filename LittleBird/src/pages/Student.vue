@@ -5,7 +5,7 @@
             <StatusBar :studentData="student"/>
         </div>
         <div class="container">
-            <conversationList :messages="communications"></conversationList>
+            <conversationList :messages="communications" :studentId="studentId"></conversationList>
         </div>
         <div class="container">
             <textInput :studentIdentifier="studentId" :studentData="student" :addTextToList="addTextToList"></textInput>

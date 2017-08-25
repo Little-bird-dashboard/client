@@ -10,7 +10,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6" v-if="studentData && findParent">
+                    <div class="col-lg-6" v-if="studentData">
                         <div class="row">
                             <div class="col-lg-12">
                                 <h1>
@@ -34,12 +34,12 @@
                             <div class="col-lg-6">
                                 <h4>Parent: </h4>
                                 <h5>
-                                    {{findParent.first_name}} {{findParent.last_name}}
+                                    {{parentFirst}} {{parentLast}}
                                 </h5>
                             </div>
                             <div class="col-lg-6">
                                 <h4>Phone: </h4>
-                                <h5>{{parentCell}}</h5>
+                                <h5>{{parentCell | formatCell}}</h5>
                                 <p @click="showModal = true" class="editLink" :class="{ 'hidden' : studentData.id == 1}">
                                   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Phone Number
                                 </p>
@@ -89,22 +89,43 @@ import { modal } from 'vue-strap'
         showModal: false,
         cell: '',
         phoneBlur: false,
-        parentCell: this.formatCell
+        parentCell: '',
+        parentFirst: '',
+        parentLast: ''
       }
 		},
 		mounted() {
-			//do something after mounting vue instance
+			console.log("Mounted!")
+
+      // this.findParent();
 		},
+    watch: {
+      guardianData(newData) {
+        console.log(newData)
+        let parent  = newData.filter(guardian => {
+          return guardian.stakeholder_type_id == 2;
+        })[0];
+        console.log(parent)
+        this.parentCell = parent.cell;
+        this.parentFirst = parent.first_name;
+        this.parentLast = parent.last_name;
+
+      }
+    },
+    filters: {
+      formatCell(phone) {
+        return phone.substring(2).replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+      }
+    },
     methods: {
       formatPhone () {
         let phone = this.cell.replace(/[^0-9]/g, "");
-        console.log(phone)
         return `+1${phone}`;
       },
       submitPhone () {
         event.preventDefault();
+        if(!this.isEmpty(this.cell)){
         this.showModal = false;
-        console.log("this")
         axios.put(`https:/littlebird-platform.herokuapp.com/students/${this.studentData.id}`, {cell: this.formatPhone()})
         .then(response => {
           this.parentCell = response.data.guardian[0].cell;
@@ -112,28 +133,22 @@ import { modal } from 'vue-strap'
         .catch(err => {
           alert(err);
         })
-        this.cell = ''
+        this.cell = ''} else {
+          alert('Please enter a phone number.')
+        }
       },
       isEmpty (value) {
         return value.trim() === '';
-      }
-    },
-		computed:
-		       {
-			       findParent: function () {
-				       return this.guardianData.filter(guardian => {
-					       return guardian.stakeholder_type_id == 2;
-				       })[0]
-			       },
-			       formatCell: function () {
-				       return this.findParent.cell.substring(2).replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
-			       }
-		       }
+      },
+      // findParent: function () {
+      //
+      // }
+    }
 	};
 
 </script>
 
-<style>
+<style scoped>
     #studentPicture {
         clip-path:circle(60px at center);
         width: 120px;

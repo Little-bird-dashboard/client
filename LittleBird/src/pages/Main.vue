@@ -3,7 +3,7 @@
         <div class="container">
             <Navigation/>
             <!-- <SearchBar/> -->
-            <div class="row">
+            <div>
                 <div v-for="card in cards">
                     <Cards :cardData="card"></Cards>
                 </div>
@@ -16,6 +16,7 @@
 	import Navigation from '../components/NavBar/NavBar.vue'
 	import Cards from '../components/Cards/Cards.vue'
 	import SearchBar from '../components/SearchBar/SearchBar.vue'
+
 	export default {
 		name:       'main',
 		components: {
