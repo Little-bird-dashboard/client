@@ -1,5 +1,6 @@
 <template>
     <div id="main">
+      <loginValidator></loginValidator>
         <div class="container">
             <Navigation/>
             <!-- <SearchBar/> -->
@@ -16,13 +17,15 @@
 	import Navigation from '../components/NavBar/NavBar.vue'
 	import Cards from '../components/Cards/Cards.vue'
 	import SearchBar from '../components/SearchBar/SearchBar.vue'
+  import loginValidator from '../components/loginValidator/loginValidator'
 
 	export default {
 		name:       'main',
 		components: {
 			Navigation,
 			Cards,
-			SearchBar
+			SearchBar,
+      loginValidator
 		},
 		data() {
 			return {

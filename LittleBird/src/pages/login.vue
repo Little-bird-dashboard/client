@@ -48,7 +48,7 @@ export default {
       } else {
       axios.post('https://littlebird-platform.herokuapp.com/auth/login', this.user)
       .then(response => {
-        localStorage.token = response.data.token;
+        this.$localStorage.set('token', response.data.token)
         this.$router.push('/dashboard')
       })
       .catch(err => {
