@@ -1,11 +1,12 @@
 <template>
     <div id="StudentPage">
+      <!-- <loginValidator></loginValidator> -->
         <div>
             <StudentCard :guardianData="stakeholders" :studentData="student"/>
             <StatusBar :studentData="student"/>
         </div>
         <div class="container">
-            <conversationList :messages="communications"></conversationList>
+            <conversationList :messages="communications" :studentId="studentId"></conversationList>
         </div>
         <div class="container">
             <textInput :studentIdentifier="studentId" :studentData="student" :addTextToList="addTextToList"></textInput>
@@ -19,6 +20,7 @@
 	import StudentCard from '../components/StudentCard/StudentCard.vue'
 	import conversationList from '../components/conversationList/conversationList'
 	import textInput from '../components/textInput/textInput'
+  import loginValidator from '../components/loginValidator/loginValidator.vue'
 
 	export default {
 		name:       'StudentPage',
@@ -26,7 +28,8 @@
 			StudentCard,
 			StatusBar,
 			conversationList,
-			textInput
+			textInput,
+      loginValidator
 		},
 		data() {
 			return {
