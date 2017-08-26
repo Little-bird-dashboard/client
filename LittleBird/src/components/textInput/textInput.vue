@@ -24,13 +24,13 @@
 		},
 		methods: {
 			sendText() {
+        event.preventDefault()
 				axios.post(`https://littlebird-platform.herokuapp.com/sms/single/${this.studentIdentifier}`, { message: this.text })
 					.then(response => {
 						this.addText(response.data[0]);
 					})
 			},
       addText(data) {
-        event.preventDefault()
         this.addTextToList({
           stakeholder_type: 'Special Education Coordinator',
           first_name:'Jaclyn',
