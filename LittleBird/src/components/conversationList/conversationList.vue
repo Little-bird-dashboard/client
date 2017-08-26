@@ -1,6 +1,6 @@
 <template>
   <div class="conversationList">
-    <div id="conversationList" v-for="message in messageData">
+    <div id="conversationList" v-for="message in messages">
       <conversationMessage :messageData="message"></conversationMessage>
     </div>
   </div>
@@ -16,17 +16,19 @@ export default {
   },
   data() {
     return {
-      messageData: messages
+      // returnedMessageData: this.messages
     }
   },
-  mounted() {
-    // setInterval(function(){
-    //   axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/communications`)
-		// 		.then(response => {
-		// 			this.messageData = response.data
-		// 	})
-    // }, 10000);
-  }
+  // mounted() {
+  //   setInterval(function(){
+  //     axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/communications`)
+	// 			.then(response => {
+	// 				this.returnedMessageData = response.data
+	// 		})
+  //     console.log('10:', this.returnedMessageData)
+  //   }, 10000);
+  //
+  // }
 }
 </script>
 <style scoped>
