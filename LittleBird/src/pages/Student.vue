@@ -1,6 +1,6 @@
 <template>
     <div id="StudentPage">
-      <loginValidator></loginValidator>
+      <!-- <loginValidator></loginValidator> -->
         <div>
             <StudentCard :guardianData="stakeholders" :studentData="student"/>
             <StatusBar :studentData="student"/>
