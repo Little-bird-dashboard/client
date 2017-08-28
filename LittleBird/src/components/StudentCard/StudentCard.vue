@@ -40,8 +40,7 @@
                             <div class="col-lg-6">
                                 <h4>Phone: </h4>
                                 <h5>{{parentCell | formatCell}}</h5>
-                                <p @click="showModal = true" class="editLink" :class="{ 'hidden' : studentData.id == 1}">
-                                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Phone Number
+                                <p @click="showModal = true" class="editLink" :class="{ 'hidden' : studentData.id == 1}"><img id="icon-small" src="/static/edit.svg"> Edit Phone Number
                                 </p>
                             </div>
                         </div>
@@ -49,7 +48,7 @@
                     <div class="col-lg-3">
                         <div class="row">
                             <div class="col-lg-3 pull-right text-center">
-                                <router-link :to="{path:'/dashboard'}"><i class="fa fa-times fa-3x" aria-hidden="true"></i></router-link>
+                                <router-link :to="{path:'/dashboard'}"><img id="icon-large" src="/static/cross.svg"></router-link>
                             </div>
                         </div>
                         <!-- <div class="row">
@@ -149,20 +148,39 @@ import { modal } from 'vue-strap'
 </script>
 
 <style scoped>
-    #studentPicture {
-        clip-path:circle(60px at center);
-        width: 120px;
-        height: auto;
+    #StudentCard .card-block .container {
+        height: 164px;
     }
-
+    #studentPicture {
+        clip-path:circle(50px at center);
+        width: 100px;
+        height: auto;
+        margin-top: 32px;
+    }
+    h1 {
+        margin-top: 32px;
+    }
     h4, h5 {
         display: inline;
     }
     .editLink {
-      color: red;
       cursor: pointer;
     }
     .hiddent {
       display: none;
+    }
+    img#icon-large {
+        width: 32px;
+        height: 32px;
+        border-radius: 0px;
+        margin-top: 32px;
+        vertical-align: middle;
+    }
+    img#icon-small {
+        width: 16px;
+        height: 16px;
+        border-radius: 0px;
+        margin-top: 0px;
+        margin-right: 4px;
     }
 </style>

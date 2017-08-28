@@ -5,8 +5,8 @@
                     <div class="col-xs-9 col-xs-offset-1">
                         <input id="text-input" type="text" class="form-control" v-model="text" v-on:keyup.enter="sendText">
                     </div>
-                    <div class="col-xs-2">
-                        <button id="input-btn" type="button" @click="sendText" class="btn btn-primary">Send Text</button>
+                    <div class="col-xs-1">
+                        <button id="input-btn" type="button" @click="sendText" class="btn btn-primary text-input-btn">Send Text</button>
                     </div>
 
             </div>
@@ -48,12 +48,25 @@
 <style scoped>
 
     .topMargin{
-
         margin-top: 10px;
     }
     .flexbox {
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    #textInput .col-xs-9 {
+        padding-left: 0;
+    }
+    #textInput .col-xs-1 {
+        padding-left: 0;
+    }
+    #text-input {
+        margin-right: 0px;
+    }
+
+    .text-input-btn {
+        background-color: #3F51B5;
+        margin-bottom: 20px;
     }
 </style>

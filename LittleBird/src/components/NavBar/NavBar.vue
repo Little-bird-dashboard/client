@@ -1,11 +1,11 @@
 <template>
     <div id="nav">
-        <nav class="navbar bg-primary fixed-top sticky-top">
+        <nav class="navbar fixed-top sticky-top">
             <div class="container">
                 <div class="row">
-                    <a href="#"> <img class="icon" width="50" height="43" src="../../../static/logo.png" alt="logo"
-                        id="logo"></a> <span
-                    id="title">Little Bird</span>
+                    <a href="#"> <img class="icon" src="../../../static/logo.png" alt="logo"
+                        id="logo"></a>
+                    <span id="title">Little Bird</span>
                     <div class="navbar-nav pull-right">
                       <!-- <button type="button" class="btn btn-primary" @click="showCustomModal = true"><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></button> -->
                                <img id="teacher-img" class="icon" src="../../../static/teacher.jpg" alt="logo">
@@ -33,7 +33,7 @@
         </modal> -->
     </div>
 
-    
+
 </template>
 
 <script>
@@ -64,27 +64,36 @@ import { modal } from 'vue-strap';
 </script>
 
 <style>
-    #title {
+    #nav {
+        background-color: #3F51B5;
+    }
+    span#title {
+        color: #FFF;
         font-size: 24px;
+        vertical-align: middle;
+        padding-left: 4px;
     }
     #teacher-img {
-        margin-right: 40px;
+        margin-right: 44px;
+        vertical-align: middle;
         clip-path:circle(30px at 30px);
-        margin-bottom: 10px;
         width: auto;
-        height: 60px;
+        height: 40px;
     }
     .icon {
-        margin: 5px;
+        vertical-align: middle;
+        margin: 10px;
     }
     #logo {
         margin-left: 20px;
+        height: 36px;
+        width: 42px;
     }
     #cog {
         margin-right: 20px;
     }
     .top-align {
-        margin-top:    auto;
+        margin-top: auto;
         margin-bottom: auto;
     }
 </style>

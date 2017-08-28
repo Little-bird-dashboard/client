@@ -13,17 +13,16 @@
         </div>
         <div class="card-group-item">
           <span v-if="!contact_date">
-            <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  None
+            <p><img id="icon-small" src="/static/message.svg">  {{ last_contact_text }}  None
           </p></span>
           <span v-else>
-            <p><i class="fa fa-comment-o" aria-hidden="true"></i>  {{ last_contact_text }}  {{ makeDateTime | moment("MMM Do YYYY") }}
+            <p><img id="icon-small" src="/static/message.svg">  {{ last_contact_text }}  {{ makeDateTime | moment("MMM Do YYYY") }}
           </p></span>
         </div>
         <div class="card-group-item">
-            <p><i class="fa fa-list-alt" aria-hidden="true"> </i> {{ review_date_text }}  {{ cardData.IEP_deadline | moment("MMM Do YYYY") }}
+            <p><img id="icon-small" src="/static/calendar.svg"> {{ review_date_text }}  {{ cardData.IEP_deadline | moment("MMM Do YYYY") }}
             </p>
         </div>
-        <hr>
     </div>
 </template>
 
@@ -48,15 +47,29 @@
 
 <style>
     .card-group {
-        border: 1px solid #333;
-        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
+        border-radius: 6px;
         margin: 10px;
+        padding-left: 16px;
+        padding-bottom: 10px;
     }
     img {
         width:         50px;
         height:        50px;
         border-radius: 25px;
-        margin-top: 5px;
+        margin-top: 16px;
         margin-left: auto;
+    }
+    img#icon-small {
+        width: 16px;
+        height: 16px;
+        border-radius: 0px;
+        margin-top: 0px;
+        margin-right: 8px;
+    }
+    h2 {
+        color: #333;
+        font-size: 24px;
+        margin-top: 16px;
     }
 </style>

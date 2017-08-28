@@ -67,7 +67,6 @@
     #StudentPage {
         font-family: 'Open Sans', sans-serif;
     }
-
     .conversations {
         width:  80%;
         margin: auto;

@@ -5,7 +5,7 @@
             <Navigation/>
             <!-- <SearchBar/> -->
             <div>
-                <div v-for="card in cards">
+                <div v-for="card in cards" class="cards">
                     <Cards :cardData="card"></Cards>
                 </div>
             </div>
