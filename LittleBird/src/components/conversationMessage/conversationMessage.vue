@@ -5,11 +5,11 @@
                 <img height="50" width="50" :src="selectIcon"/>
             </div>
             <div class="col-lg-10">
-                <h6>{{messageData.communication_type}} from {{messageData.first_name}} {{messageData.last_name}}</h6>
+                <p>{{messageData.communication_type}} from <span class="sender"> {{messageData.first_name}} {{messageData.last_name}}</span></p>
                 <div class="messageBody">
                     {{messageData.raw_body}}
                 </div>
-                <small>{{makeDateTime | moment("MMMM Do YYYY")}} at {{makeDateTime | moment("h:mm:ss a")}}</small>
+                <p><span class="timestamp">{{makeDateTime | moment("MMMM Do YYYY")}} at {{makeDateTime | moment("h:mm:ss a")}}</span></p>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
 			selectIcon() {
 				switch (this.messageData.stakeholder_type) {
 					case 'Special Education Coordinator':
-						return '../../../static/user_icon.png'
+						return '../../../static/img/teacher.4878cbb.jpg'
 						break;
 					case 'Primary Guardian':
 						return '../../../static/guardian_icon.png'
@@ -49,7 +49,7 @@
 						return '../../../static/admin_icon.png'
 						break;
 					case 'Little Bird':
-						return '../../../static/littlebird_icon.png'
+						return '../../../static/little-bird-conversation.png'
 						break;
 					case 'Additional Guardian':
 						return '../../../static/guardian_icon.png'
@@ -63,9 +63,32 @@
 	}
 </script>
 <style scoped>
+    #conversationList .col-lg-10 {
+        padding-left: 0px;
+    }
+
+    #conversationMessage {
+        margin-bottom: 16px;
+    }
+
     .messageBody {
-        border:        2px solid gray;
-        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
+        border-radius: 6px;
         padding:       8px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    img {
+        margin-top: 4px;
+        border-radius: 25px;
+    }
+    .sender {
+        font-color: #333;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .timestamp {
+        font-color: #686669;
+        font-size: 12px;
     }
 </style>

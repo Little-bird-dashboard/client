@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="74px" height="74px" viewBox="0 0 74 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>cross</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPad-Pro-Portrait" transform="translate(-767.000000, -359.000000)">
+            <g id="cross" transform="translate(733.000000, 325.000000)">
+                <rect id="bounds" x="7" y="7" width="128" height="128"></rect>
+                <path d="M76,66 L76,25.9932291 C76,23.2288496 73.7614237,21 71,21 C68.2441952,21 66,23.2355448 66,25.9932291 L66,66 L25.9932291,66 C23.2288496,66 21,68.2385763 21,71 C21,73.7558048 23.2355448,76 25.9932291,76 L66,76 L66,116.006771 C66,118.77115 68.2385763,121 71,121 C73.7558048,121 76,118.764455 76,116.006771 L76,76 L116.006771,76 C118.77115,76 121,73.7614237 121,71 C121,68.2441952 118.764455,66 116.006771,66 L76,66 Z" id="Combined-Shape" fill="#333333" transform="translate(71.000000, 71.000000) rotate(45.000000) translate(-71.000000, -71.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

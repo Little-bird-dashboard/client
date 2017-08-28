@@ -1,18 +1,18 @@
 <template>
     <div id="StatusBar">
-        <nav class="navbar bg-primary">
+        <nav class="navbar bg-primary student-status-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 text-center">
-                        <i class="fa fa-calendar fa-3x cal" aria-hidden="true"></i>
+                        <img id="icon-large" src="/static/calendar-white.svg">
                         {{this.studentData.IEP_deadline | moment("MMMM Do YYYY")}}
                     </div>
                     <div @click="followUpText" class="col-lg-4 text-center">
-                        <i class="fa fa-paper-plane-o fa-3x cal pointer" aria-hidden="true"></i>
+                        <img id="icon-large" src="/static/paper-plane.svg">
                         Initial Contact: August 9th
                     </div>
                     <div class="col-lg-4 text-center">
-                        <i @click="textPage" class="fa fa-calendar-plus-o fa-3x cal pointer" aria-hidden="true"></i>
+                        <img id="icon-large" src="/static/calendar-add.svg">
                         Initialize IEP Contact
                     </div>
                 </div>
@@ -47,13 +47,29 @@
 </script>
 
 <style>
+    #StatusBar .navbar .container {
+        height: 80px;
+    }
+    #StatusBar .row .text-center {
+        height: 80px;
+        margin-top: 40px;
+    }
+    .text-center {
+        font-size: 18px;
+    }
+    .student-status-bar {
+        background-color: #3F51B5;
+        border-radius: 0px;
+    }
     .cal {
         padding: 20px;
     }
-    .fa-calendar {
-      color:white;
-    }
     .pointer {
       cursor: pointer;
+    }
+    img#icon-large {
+        height: 40px;
+        border-radius: 0px;
+        margin-right: 16px;
     }
 </style>
