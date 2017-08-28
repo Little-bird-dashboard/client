@@ -4,14 +4,11 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "loginValidator",
-  data() {
-    token = this.$localStorage.get('token')
-  },
   mounted() {
-    console.log(this.token)
-    if(!this.token){
+    if(!this.$session.has('token')){
       this.$router.push('/')
     }
   }

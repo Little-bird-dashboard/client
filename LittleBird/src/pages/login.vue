@@ -48,7 +48,8 @@ export default {
       } else {
       axios.post('https://littlebird-platform.herokuapp.com/auth/login', this.user)
       .then(response => {
-        this.$localStorage.set('token', response.data.token)
+        this.$session.set('token', response.data.token)
+        // sessionStorage.setItem('timestamp', this.$options.moment.add(2, 'hours')
         this.$router.push('/dashboard')
       })
       .catch(err => {

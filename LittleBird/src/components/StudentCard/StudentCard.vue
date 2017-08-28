@@ -63,7 +63,7 @@
         <modal :show.sync="showModal" small>
           <div slot="modal-body" class="modal-body container">
             <div class="form-group" :class="{'has-error' : phoneBlur && isEmpty(cell)}">
-              <input type="tel" name="" placeholder="Cell number" @keyup.enter="submitPhone" @blur="phoneBlur = true" v-model="cell">
+              <input type="tel" name="" placeholder="Cell number" @blur="phoneBlur = true" v-model="cell">
             </div>
           </div>
           <div slot="modal-footer" class="modal-footer">
@@ -94,17 +94,14 @@ import { modal } from 'vue-strap'
       }
 		},
 		mounted() {
-			console.log("Mounted!")
 
       // this.findParent();
 		},
     watch: {
       guardianData(newData) {
-        console.log(newData)
         let parent  = newData.filter(guardian => {
           return guardian.stakeholder_type_id == 2;
         })[0];
-        console.log(parent)
         this.parentCell = parent.cell;
         this.parentFirst = parent.first_name;
         this.parentLast = parent.last_name;

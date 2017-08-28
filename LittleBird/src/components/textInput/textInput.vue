@@ -3,7 +3,7 @@
         <form>
             <div class="row topMargin">
                     <div class="col-xs-9 col-xs-offset-1">
-                        <input id="text-input" type="text" class="form-control" v-model="text" v-on:keyup.enter="sendText">
+                        <input id="text-input" type="text" class="form-control" v-model="text">
                     </div>
                     <div class="col-xs-1">
                         <button id="input-btn" type="button" @click="sendText" class="btn btn-primary text-input-btn">Send Text</button>

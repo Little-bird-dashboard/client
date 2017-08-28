@@ -1,6 +1,6 @@
 <template>
   <div class="conversationList">
-    <div id="conversationList" v-for="message in messages">
+    <div id="conversationList" v-for="message in sortedMessages">
       <conversationMessage :messageData="message"></conversationMessage>
     </div>
   </div>
@@ -17,6 +17,13 @@ export default {
   data() {
     return {
       // returnedMessageData: this.messages
+    }
+  },
+  computed: {
+    sortedMessages() {
+      return this.messages.sort(function (a, b) {
+        return a.timestamp - b.timestamp;
+      })
     }
   },
   // mounted() {
