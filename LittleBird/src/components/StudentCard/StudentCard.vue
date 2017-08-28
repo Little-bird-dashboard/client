@@ -63,7 +63,7 @@
         <modal :show.sync="showModal" small>
           <div slot="modal-body" class="modal-body container">
             <div class="form-group" :class="{'has-error' : phoneBlur && isEmpty(cell)}">
-              <input type="tel" name="" placeholder="Cell number" @keyup.enter="submitPhone" @blur="phoneBlur = true" v-model="cell">
+              <input type="tel" name="" placeholder="Cell number" @blur="phoneBlur = true" v-model="cell">
             </div>
           </div>
           <div slot="modal-footer" class="modal-footer">
