@@ -11,7 +11,7 @@
                         <img id="icon-large" src="/static/paper-plane.svg">
                         Initial Contact: August 9th
                     </div>
-                    <div class="col-lg-4 text-center">
+                    <div class="col-lg-4 text-center" @click="textPage">
                         <img id="icon-large" src="/static/calendar-add.svg">
                         Initialize IEP Contact
                     </div>

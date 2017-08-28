@@ -1,6 +1,6 @@
 <template>
     <div id="StudentPage">
-      <!-- <loginValidator></loginValidator> -->
+      <loginValidator></loginValidator>
         <div>
             <StudentCard :guardianData="stakeholders" :studentData="student"/>
             <StatusBar :studentData="student"/>
@@ -51,13 +51,11 @@
 			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/communications`)
 				.then(response => {
 					this.communications = response.data
-          console.log('database:', response.data);
 				})
 		},
     methods: {
       addTextToList(message) {
         this.communications.push(message);
-        console.log('Success!')
       }
     }
 	}

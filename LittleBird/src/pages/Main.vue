@@ -1,6 +1,6 @@
 <template>
     <div id="main">
-      <!-- <loginValidator></loginValidator> -->
+      <loginValidator></loginValidator>
         <div class="container">
             <Navigation/>
             <!-- <SearchBar/> -->

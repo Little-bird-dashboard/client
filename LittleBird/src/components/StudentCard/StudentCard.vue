@@ -94,17 +94,14 @@ import { modal } from 'vue-strap'
       }
 		},
 		mounted() {
-			console.log("Mounted!")
 
       // this.findParent();
 		},
     watch: {
       guardianData(newData) {
-        console.log(newData)
         let parent  = newData.filter(guardian => {
           return guardian.stakeholder_type_id == 2;
         })[0];
-        console.log(parent)
         this.parentCell = parent.cell;
         this.parentFirst = parent.first_name;
         this.parentLast = parent.last_name;
