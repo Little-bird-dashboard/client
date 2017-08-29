@@ -39,8 +39,14 @@ export default {
 }
 </script>
 <style scoped>
-#conversationList {
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
+    .conversationList {
+        margin-bottom: 60px;
+    }
+    #conversationList {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
 </style>

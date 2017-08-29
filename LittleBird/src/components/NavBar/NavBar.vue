@@ -66,6 +66,7 @@ import { modal } from 'vue-strap';
 <style>
     #nav {
         background-color: #3F51B5;
+        width: 100%;
     }
     span#title {
         color: #FFF;

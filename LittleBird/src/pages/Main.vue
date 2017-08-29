@@ -1,8 +1,8 @@
 <template>
     <div id="main">
       <loginValidator></loginValidator>
+      <Navigation/>
         <div class="container">
-            <Navigation/>
             <!-- <SearchBar/> -->
             <div>
                 <div v-for="card in cards" class="cards">

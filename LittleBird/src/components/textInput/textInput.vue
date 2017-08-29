@@ -1,7 +1,7 @@
 <template>
     <div id="textInput">
         <form>
-            <div class="row topMargin">
+            <div class="row topMargin stickyInput">
                     <div class="col-xs-9 col-xs-offset-1">
                         <input id="text-input" type="text" class="form-control" v-model="text">
                     </div>
@@ -46,7 +46,6 @@
 	}
 </script>
 <style scoped>
-
     .topMargin{
         margin-top: 10px;
     }
@@ -57,16 +56,30 @@
     }
     #textInput .col-xs-9 {
         padding-left: 0;
+        width: 76.67%;
+        margin-left: 5.33%;
     }
     #textInput .col-xs-1 {
         padding-left: 0;
     }
-    #text-input {
+    .stickyInput {
+        background-color: #FFF;
+        height: 72px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
         margin-right: 0px;
     }
-
+    #text-input {
+        height: 32px;
+        margin-top: 20px;
+        margin-right: 0px;
+    }
     .text-input-btn {
+        height: 32px;
         background-color: #3F51B5;
+        margin-top: 20px;
         margin-bottom: 20px;
+        margin-left: 0px;
     }
 </style>
