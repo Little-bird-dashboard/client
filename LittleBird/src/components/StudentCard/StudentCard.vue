@@ -63,7 +63,7 @@
         <modal :show.sync="showModal" small>
           <div slot="modal-body" class="modal-body container">
             <div class="form-group" :class="{'has-error' : phoneBlur && isEmpty(cell)}">
-              <input type="tel" name="" placeholder="Cell number" @blur="phoneBlur = true" v-model="cell">
+              <input type="tel" name="" placeholder="Cell number" @blur="phoneBlur = true" v-model="cell" @keyup.enter="none">
             </div>
           </div>
           <div slot="modal-footer" class="modal-footer">
@@ -121,16 +121,16 @@ import { modal } from 'vue-strap'
       submitPhone () {
         event.preventDefault();
         if(!this.isEmpty(this.cell)){
-        this.showModal = false;
-        axios.put(`https://littlebird-platform.herokuapp.com/students/${this.studentData.id}`, {cell: this.formatPhone()})
-        .then(response => {
-          this.parentCell = response.data.guardian[0].cell;
-        })
-        .catch(err => {
-          alert(err);
-        })
-        this.cell = ''} else {
-          alert('Please enter a phone number.')
+          this.showModal = false;
+          axios.put(`https://littlebird-platform.herokuapp.com/students/${this.studentData.id}`, {cell: this.formatPhone()})
+          .then(response => {
+            this.parentCell = response.data.guardian[0].cell;
+          })
+          .catch(err => {
+            alert(err);
+          })
+          this.cell = ''} else {
+            alert('Please enter a phone number.')
         }
       },
       isEmpty (value) {

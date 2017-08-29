@@ -3,7 +3,7 @@
         <form>
             <div class="row topMargin stickyInput">
                     <div class="col-xs-9 col-xs-offset-1">
-                        <input id="text-input" type="text" class="form-control" v-model="text">
+                        <input id="text-input" type="text" class="form-control" v-model="text" @keyup.enter="none">
                     </div>
                     <div class="col-xs-1">
                         <button id="input-btn" type="button" @click="sendText" class="btn btn-primary text-input-btn">Send Text</button>
@@ -25,10 +25,14 @@
 		methods: {
 			sendText() {
         event.preventDefault()
+        if(!this.text.trim() == ''){
 				axios.post(`https://littlebird-platform.herokuapp.com/sms/single/${this.studentIdentifier}`, { message: this.text })
 					.then(response => {
 						this.addText(response.data[0]);
 					})
+        } else {
+          alert("Please enter a message before sending.")
+        }
 			},
       addText(data) {
         this.addTextToList({
