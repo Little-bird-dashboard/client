@@ -48,6 +48,9 @@ export default {
       } else {
       axios.post('https://littlebird-platform.herokuapp.com/auth/login', this.user)
       .then(response => {
+        if(this.$session.exists()){
+          this.$session.destroy();
+        }
         this.$session.set('token', response.data.token)
         // sessionStorage.setItem('timestamp', this.$options.moment.add(2, 'hours')
         this.$router.push('/dashboard')
