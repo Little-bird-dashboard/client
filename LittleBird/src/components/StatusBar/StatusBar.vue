@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-lg-4 text-center">
                         <img id="icon-large" src="/static/calendar-white.svg">
-                        {{this.studentData.IEP_deadline | moment("MMMM Do YYYY")}}
+                        Due: {{this.studentData.IEP_deadline | moment("MMMM Do YYYY")}}
                     </div>
                     <div @click="followUpText" class="col-lg-4 text-center">
                         <img id="icon-large" src="/static/paper-plane.svg">
@@ -58,8 +58,8 @@
         font-size: 18px;
     }
     .student-status-bar {
-        background-color: #3F51B5;
-        border-radius: 0px;
+        background-color: #3F51B5 !important;
+        border-radius: 0px !important;
     }
     .cal {
         padding: 20px;
@@ -71,5 +71,6 @@
         height: 40px;
         border-radius: 0px;
         margin-right: 16px;
+        margin-top: 0px
     }
 </style>

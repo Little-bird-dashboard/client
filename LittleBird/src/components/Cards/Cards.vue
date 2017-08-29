@@ -68,8 +68,8 @@
         margin-right: 8px;
     }
     h2 {
-        color: #333;
-        font-size: 24px;
-        margin-top: 16px;
+        color: #333 !important;
+        font-size: 24px !important;
+        margin-top: 16px !important;
     }
 </style>

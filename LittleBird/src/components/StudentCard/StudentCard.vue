@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="row">
-                            <div class="col-lg-3 pull-right text-center">
+                            <div class="col-lg-1 pull-right text-center">
                                 <router-link :to="{path:'/dashboard'}"><img id="icon-large" src="/static/cross.svg"></router-link>
                             </div>
                         </div>
@@ -153,6 +153,7 @@ import { modal } from 'vue-strap'
         width: 100px;
         height: auto;
         margin-top: 32px;
+        margin-left: 56px;
     }
     h1 {
         margin-top: 32px;

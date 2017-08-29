@@ -7,7 +7,7 @@
     </div>
     <div class="loginForm container">
       <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 login-fields">
           <div class="margin-top input">
             <div class="form-group" :class="{ 'has-error': isEmpty(user.email) && blur.email}">
               <input type="text" name="email" class="form-control" aria-label="Text input for email" placeholder="Email" v-model="user.email" @blur="blur.email = true">
@@ -17,7 +17,7 @@
             <div class="form-group" :class="{ 'has-error': isEmpty(user.password) && blur.password}">
               <input type="password" name="password" class="form-control" aria-label="Text input for password" placeholder="Password" v-model="user.password" @blur="blur.password = true">
             </div>
-          <button type="button" class="input btn btn-primary margin-top" @click="login">Login</button>
+          <button type="button" class="input btn btn-primary" @click="login">Login</button>
           </div>
       </div>
     </div>
@@ -70,20 +70,43 @@ export default {
 }
 </script>
 <style scoped>
-.hero {
-  width: 100%;
-}
-.heroIcon {
-  margin: 50px;
-  margin-bottom: 10px;
-}
-.title {
-  padding-bottom: 20px;
-}
-.margin {
-    margin: 5px;
-}
-.margin-top {
-  margin-top: 5px;
-}
+    .hero {
+        width: 100%;
+        background-color: #3F51B5;
+    }
+    .heroIcon {
+        margin: 50px;
+        margin-bottom: 10px;
+    }
+    .title {
+        padding-bottom: 40px;
+    }
+    .margin {
+        margin: 5px;
+    }
+    .margin-top {
+        margin-top: 20px;
+    }
+    .loginForm {
+        width: 100%;
+        align-items: center;
+        margin-top: 40px;
+    }
+    .justify-content-center {
+        width: 30%;
+        margin: 0 auto;
+        position: relative;
+    }
+    .login-fields {
+        width: 100%;
+    }
+    .input {
+        margin: 0 auto;
+        position: relative;
+        display: inherit;
+    }
+    .btn-primary {
+        background-color: #3F51B5;
+        border-color: 0px;
+    }
 </style>

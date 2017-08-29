@@ -65,9 +65,12 @@
 <style scoped>
     #conversationList .col-lg-10 {
         padding-left: 0px;
+        width: 91%;
     }
 
     #conversationMessage {
+        width: 91%;
+        margin: 0 auto;
         margin-bottom: 16px;
     }
 
