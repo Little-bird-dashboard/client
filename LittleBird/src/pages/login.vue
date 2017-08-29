@@ -30,14 +30,14 @@ export default {
   data() {
     return {
       user: {
-      email: '',
-      password: ''
-    },
-    blur: {
-      email: false,
-      password: false
+        email: '',
+        password: ''
+      },
+      blur: {
+        email: false,
+        password: false
+      }
     }
-  }
   },
   methods: {
     login() {
@@ -46,25 +46,29 @@ export default {
       } else if (!this.validEmail(this.user.email)){
         alert('Not a valid email address.');
       } else {
-      axios.post('https://littlebird-platform.herokuapp.com/auth/login', this.user)
-      .then(response => {
-        if(this.$session.exists()){
-          this.$session.destroy();
-        }
-        this.$session.set('token', response.data.token)
-        // sessionStorage.setItem('timestamp', this.$options.moment.add(2, 'hours')
-        this.$router.push('/dashboard')
-      })
-      .catch(err => {
-        alert(err);
-      })}
-    },
+        this.user.email = this.user.email.toLowerCase();
+        axios.post('https://littlebird-platform.herokuapp.com/auth/login', this.user)
+        .then(response => {
+          if(this.$session.exists()){
+            this.$session.destroy();
+          }
+          this.$session.set('token', response.data.token)
+          // sessionStorage.setItem('timestamp', this.$options.moment.add(2, 'hours')
+          this.$router.push('/dashboard')
+        })
+        .catch(err => {
+          alert(err);
+        })}
+      },
     isEmpty (value) {
       return value.trim() === ''
     },
     validEmail (value) {
       const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-      return typeof value == 'string' && value.trim() != '' && emailRegex.test(value);
+      console.log(typeof value == 'string');
+      console.log(value.trim() != '');
+      console.log(emailRegex.test(value));
+      return typeof value == 'string' && value.trim() != '' && emailRegex.test(value.toLowerCase());
     }
   }
 }

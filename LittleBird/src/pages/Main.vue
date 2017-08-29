@@ -5,7 +5,7 @@
         <div class="container">
             <!-- <SearchBar/> -->
             <div>
-                <div v-for="card in cards" class="cards">
+                <div v-for="card in activeStudents" class="cards">
                     <Cards :cardData="card"></Cards>
                 </div>
             </div>
@@ -29,7 +29,7 @@
 		},
 		data() {
 			return {
-				cards: {}
+				cards: []
 			}
 		},
 		mounted() {
@@ -38,7 +38,14 @@
 				.then(response => {
 					this.cards = response.data
 				})
-		}
+		},
+    computed: {
+      activeStudents() {
+        return this.cards.filter(function(student) {
+          return student.grade_type_id != 20;
+        })
+      }
+    }
 	}
 </script>
 
