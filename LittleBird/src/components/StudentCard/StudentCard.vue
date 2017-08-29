@@ -122,7 +122,7 @@ import { modal } from 'vue-strap'
         event.preventDefault();
         if(!this.isEmpty(this.cell)){
         this.showModal = false;
-        axios.put(`https:/littlebird-platform.herokuapp.com/students/${this.studentData.id}`, {cell: this.formatPhone()})
+        axios.put(`https://littlebird-platform.herokuapp.com/students/${this.studentData.id}`, {cell: this.formatPhone()})
         .then(response => {
           this.parentCell = response.data.guardian[0].cell;
         })
