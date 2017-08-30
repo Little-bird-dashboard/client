@@ -2,9 +2,9 @@
     <div id="main">
       <loginValidator></loginValidator>
       <Navigation/>
-        <div class="container">
+        <div class="container flexbox">
             <!-- <SearchBar/> -->
-            <div>
+            <div class="row">
                 <div v-for="card in activeStudents" class="cards">
                     <Cards :cardData="card"></Cards>
                 </div>
@@ -53,5 +53,11 @@
     #main {
         font-family: 'Open Sans', sans-serif;
         font-weight: 500;
+    }
+    .flexbox {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex: 1;
     }
 </style>
