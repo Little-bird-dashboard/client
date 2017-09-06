@@ -6,7 +6,7 @@ Little Bird is a web- and SMS-based scheduling took that facilitates the schedul
 ## Links
 * [Company Site](https://trylittlebird.com/)
 * [Startup Weekend EDU Denver Pitch Project](https://github.com/exceptionalEducation/demo)
-* Demo Video - Coming soon!
+* [Demo Video](https://www.youtube.com/watch?v=I5ezQU0JSus)
 
 ### Demo Instructions
 1. Go to https://littlebird.host. 
