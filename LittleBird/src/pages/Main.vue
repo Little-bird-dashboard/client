@@ -44,6 +44,9 @@
         return this.cards.filter(function(student) {
           return student.grade_type_id != 20;
         })
+        .sort((a, b) => {
+          return a.id - b.id;
+        })
       }
     }
 	}
