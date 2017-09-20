@@ -40,8 +40,8 @@
                             <div class="col-lg-6">
                                 <h4>Phone: </h4>
                                 <h5>{{parentCell | formatCell}}</h5>
-                                <p @click="showModal = true" class="editLink" :class="{ 'hidden' : studentData.id == 1}"><img id="icon-small" src="/static/edit.svg"> Edit Phone Number
-                                </p>
+                                <!-- <p @click="showModal = true" class="editLink" :class="{ 'hidden' : studentData.id == 1}"><img id="icon-small" src="/static/edit.svg"> Edit Phone Number
+                                </p> -->
                             </div>
                         </div>
                     </div>
@@ -60,9 +60,9 @@
                 </div>
             </div>
         </div>
-        <modal :show.sync="showModal" small>
+        <!-- <modal :show.sync="showModal" small>
           <div slot="modal-body" class="modal-body container">
-            <div class="form-group" :class="{'has-error' : phoneBlur && isEmpty(cell)}">
+            <div class="form-group" :class="{'has-error' : phoneBlur && isEmpty(cell), 'has-warning' : incomplete}">
               <input type="tel" name="" placeholder="Cell number" @blur="phoneBlur = true" v-model="cell" @keyup.enter="none">
             </div>
           </div>
@@ -70,7 +70,7 @@
             <button type="button" class="btn btn-default" @click="showModal = false">Exit</button>
             <button type="button" class="btn btn-primary" @click="submitPhone">Submit</button>
           </div>
-        </modal>
+        </modal> -->
     </div>
 </template>
 
