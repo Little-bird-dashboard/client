@@ -1,7 +1,7 @@
 # Little Bird
 
 ## Description
-Little Bird is a web- and SMS-based scheduling took that facilitates the scheduling of IEP and other meetings across parents, educators, and service providers.
+Little Bird is a web- and SMS-based scheduling tool that facilitates the scheduling of IEP and other meetings across parents, educators, and service providers.
 
 ## Links
 * [Company Site](https://trylittlebird.com/)
