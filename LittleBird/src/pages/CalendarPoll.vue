@@ -36,10 +36,10 @@
 </template>
 
 <script>
-	import CalendarHeaderCard from '../components/CalendarHeaderCard/CalendarHeaderCard'
-	import StakeholderCard from '../components/StakeholderCard/StakeholderCard'
-	import CalendarCard from '../components/CalendarCard/CalendarCard'
-	import NavBar from '../components/NavBar/NavBar'
+	import CalendarHeaderCard from '../components/schedule-components/CalendarHeaderCard'
+	import StakeholderCard from '../components/schedule-components/StakeholderCard'
+	import CalendarCard from '../components/schedule-components/CalendarCard'
+	import NavBar from '../components/NavBar'
 
 	export default {
 		name:       'CalendarPoll',

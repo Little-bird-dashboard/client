@@ -3,7 +3,7 @@
       <loginValidator></loginValidator>
         <div>
             <StudentCard :guardianData="stakeholders" :studentData="student"/>
-            <StatusBar :studentData="student"/>
+            <statusBar :studentData="student"/>
         </div>
         <div class="container">
             <conversationList :messages="communications" :studentId="studentId"></conversationList>
@@ -16,17 +16,17 @@
 
 <script>
 	import moment from 'moment'
-	import StatusBar from '../components/StatusBar/StatusBar.vue'
-	import StudentCard from '../components/StudentCard/StudentCard.vue'
-	import conversationList from '../components/conversationList/conversationList'
-	import textInput from '../components/textInput/textInput'
-  import loginValidator from '../components/loginValidator/loginValidator.vue'
+	import statusBar from '../components/studentPage-components/StatusBar.vue'
+	import StudentCard from '../components/studentPage-components/StudentCard.vue'
+	import conversationList from '../components/studentPage-components/conversationList'
+	import textInput from '../components/studentPage-components/textInput'
+  import loginValidator from '../components/loginValidator.vue'
 
 	export default {
 		name:       'StudentPage',
 		components: {
 			StudentCard,
-			StatusBar,
+			statusBar,
 			conversationList,
 			textInput,
       loginValidator

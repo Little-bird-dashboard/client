@@ -6,7 +6,7 @@
             <!-- <SearchBar/> -->
             <div class="row">
                 <div v-for="card in activeStudents" class="cards">
-                    <Cards :cardData="card"></Cards>
+                    <studentCard :cardData="card"></studentCard>
                 </div>
             </div>
         </div>
@@ -14,17 +14,17 @@
 </template>
 
 <script>
-	import Navigation from '../components/NavBar/NavBar.vue'
-	import Cards from '../components/Cards/Cards.vue'
-	import SearchBar from '../components/SearchBar/SearchBar.vue'
-  import loginValidator from '../components/loginValidator/loginValidator'
+	import Navigation from '../components/NavBar.vue'
+	import studentCard from '../components/dashboard-components/studentCard.vue'
+	import searchBar from '../components/dashboard-components/searchBar.vue'
+  import loginValidator from '../components/loginValidator'
 
 	export default {
 		name:       'main',
 		components: {
 			Navigation,
-			Cards,
-			SearchBar,
+			studentCard,
+			searchBar,
       loginValidator
 		},
 		data() {

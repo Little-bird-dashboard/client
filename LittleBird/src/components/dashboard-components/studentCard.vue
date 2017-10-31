@@ -28,7 +28,7 @@
 
 <script>
 	export default {
-		name:  'cards',
+		name:  'studentCard',
 		props: ['cardData'],
 		data() {
 			return {

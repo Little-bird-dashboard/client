@@ -1,19 +1,19 @@
 <template>
     <div id="home">
         <Navigation/>
-        <SearchBar/>
+        <!-- <SearchBar/> -->
     </div>
 </template>
 
 <script>
-	import Navigation from '../components/NavBar/NavBar.vue'
-	import SearchBar from '../components/SearchBar/SearchBar.vue'
+	import Navigation from '../components/NavBar.vue'
+	// import SearchBar from '../components/SearchBar/SearchBar.vue'
 
 	export default {
 		name:       'home',
 		components: {
 			Navigation,
-			SearchBar
+			// SearchBar
 		}
 	}
 </script>

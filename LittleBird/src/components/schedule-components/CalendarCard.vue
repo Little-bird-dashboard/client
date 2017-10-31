@@ -10,7 +10,7 @@
     </div>
 </template>
 <script>
-	import availableCard from '../availableCard/availableCard'
+	import availableCard from './availableCard'
 	export default {
 		name:       "CalendarCard",
 		props:      ['dayData', 'stakeholdersData'],

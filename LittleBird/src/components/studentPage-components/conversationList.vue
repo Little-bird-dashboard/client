@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import conversationMessage from '../conversationMessage/conversationMessage'
+import conversationMessage from './conversationMessage'
 
 export default {
   name: 'conversationList',
