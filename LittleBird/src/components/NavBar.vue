@@ -1,5 +1,5 @@
 <template>
-    <div id="nav">
+    <div id="navBar">
         <nav class="navbar fixed-top sticky-top">
             <div class="container">
                 <div class="row">
@@ -64,7 +64,7 @@ import { modal } from 'vue-strap';
 </script>
 
 <style>
-    #nav {
+    #navBar {
         background-color: #3F51B5;
         width: 100%;
     }

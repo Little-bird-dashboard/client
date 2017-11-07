@@ -1,12 +1,12 @@
 <template>
     <div id="main">
-      <loginValidator></loginValidator>
-      <Navigation/>
+      <LoginValidator></LoginValidator>
+      <NavBar/>
         <div class="container flexbox">
             <!-- <SearchBar/> -->
             <div class="row">
-                <div v-for="card in activeStudents" class="cards">
-                    <studentCard :cardData="card"></studentCard>
+                <div v-for="card in activeStudents" class="cards" :key="card.id">
+                    <StudentCard :cardData="card"></StudentCard>
                 </div>
             </div>
         </div>
@@ -14,18 +14,18 @@
 </template>
 
 <script>
-	import Navigation from '../components/NavBar.vue'
-	import studentCard from '../components/dashboard-components/studentCard.vue'
-	import searchBar from '../components/dashboard-components/searchBar.vue'
-  import loginValidator from '../components/loginValidator'
+	import NavBar from '../components/NavBar.vue'
+	import StudentCard from '../components/dashboard-components/StudentCard.vue'
+	import SearchBar from '../components/dashboard-components/SearchBar.vue'
+  import LoginValidator from '../components/LoginValidator'
 
 	export default {
 		name:       'main',
 		components: {
-			Navigation,
-			studentCard,
-			searchBar,
-      loginValidator
+			NavBar,
+			StudentCard,
+			SearchBar,
+      LoginValidator
 		},
 		data() {
 			return {

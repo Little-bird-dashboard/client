@@ -3,7 +3,7 @@
         <div class="row flex-row flex-nowrap">
             <NavBar/>
             <div class="container-fluid">
-                <CalendarHeaderCard :studentData="student" class="offset-lg-1 CalendarCard"></CalendarHeaderCard>
+                <calendarHeaderCard :studentData="student" class="offset-lg-1 CalendarCard"></calendarHeaderCard>
                 <div class="card">
                     <div class="row">
                       <h3 class='container'>For the week of {{schedule.weekstart}}, what times are you available to meet?</h3>
@@ -12,17 +12,17 @@
                               <h4>a</h4>
                               <h4>a</h4>
                             </div>
-                              <div v-for="stakeholder in stakeholderList">
-                                  <StakeholderCard :stakeholderData="stakeholder"></StakeholderCard>
+                              <div v-for="stakeholder in stakeholderList" :key="stakeholder.id">
+                                  <stakeholderCard :stakeholderData="stakeholder"></stakeholderCard>
                               </div>
                           </div>
 
                       <div class="col-lg-10 col-md-10 col-sm-10">
                           <div class="container-fluid scheduleCards">
                               <div class="row flex-row flex-nowrap">
-                                <div v-for="day in schedule.available">
-                                  <CalendarCard :dayData="day"
-                                      :stakeholdersData="stakeholderList" class="calendarCard"></CalendarCard>
+                                <div v-for="day in schedule.available" :key="day.id">
+                                  <calendarCard :dayData="day"
+                                      :stakeholdersData="stakeholderList" class="calendarCard"></calendarCard>
                                 </div>
                               </div>
                           </div>
@@ -36,18 +36,18 @@
 </template>
 
 <script>
-	import CalendarHeaderCard from '../components/schedule-components/CalendarHeaderCard'
-	import StakeholderCard from '../components/schedule-components/StakeholderCard'
-	import CalendarCard from '../components/schedule-components/CalendarCard'
+	import calendarHeaderCard from '../components/schedule-components/calendarHeaderCard'
+	import stakeholderCard from '../components/schedule-components/stakeholderCard'
+	import calendarCard from '../components/schedule-components/calendarCard'
 	import NavBar from '../components/NavBar'
 
 	export default {
 		name:       'CalendarPoll',
 		components: {
 			NavBar,
-			CalendarHeaderCard,
-			StakeholderCard,
-			CalendarCard
+			calendarHeaderCard,
+			stakeholderCard,
+			calendarCard
 		},
 		data() {
 			return {

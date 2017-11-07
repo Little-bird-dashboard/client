@@ -25,7 +25,12 @@
 	import axios from 'axios'
 	export default {
 		name:    'statusBar',
-		props:   ['studentData', 'messageData'],
+		props:   {
+      studentData: {
+        type: Object,
+        required: true,
+      },
+    },
 		data() {
 			return {}
 		},

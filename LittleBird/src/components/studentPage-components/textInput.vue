@@ -16,7 +16,20 @@
 <script>
 	export default {
 		name:    'textInput',
-		props:   ['teacherData', 'studentIdentifier', 'addTextToList'],
+		props:   {
+      // teacherData: {
+      //   type: Object,
+      //   required: true,
+      // },
+      studentIdentifier: {
+        type: Number,
+        required: true,
+      },
+      addTextToList: {
+        type: Function,
+        required: true,
+      }
+    },
 		data() {
 			return {
 				text: ''

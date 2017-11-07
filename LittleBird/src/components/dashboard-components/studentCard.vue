@@ -29,7 +29,10 @@
 <script>
 	export default {
 		name:  'studentCard',
-		props: ['cardData'],
+		props: {
+      cardData: Object,
+      required: true,
+    },
 		data() {
 			return {
 				last_contact_text: 'Last Contact: ',

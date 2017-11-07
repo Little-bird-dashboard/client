@@ -62,7 +62,7 @@
         </div>
         <modal :show.sync="showModal" small>
           <div slot="modal-body" class="modal-body container">
-            <div class="form-group" :class="{'has-error' : phoneBlur && isEmpty(cell), 'has-warning' : incomplete}">
+            <div class="form-group" :class="{'has-error' : phoneBlur && isEmpty(cell)}">
               <input type="tel" name="" placeholder="Cell number" @blur="phoneBlur = true" v-model="cell" @keyup.enter="none">
             </div>
           </div>
@@ -79,7 +79,16 @@ import { modal } from 'vue-strap'
 
 	export default {
 		name:  'StudentCard',
-		props: ['studentData', 'guardianData'],
+		props: {
+      studentData: {
+        type: Object,
+        required: true,
+      },
+      guardianData: {
+        type: Array,
+        required: true,
+      },
+    },
     components: {
       modal
     },

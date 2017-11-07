@@ -11,7 +11,16 @@
 <script>
 export default {
   name: "availableCard",
-  props: ['stakeholderData','dayData'],
+  props: {
+      stakeholderData: {
+        type: Object,
+        required: true,
+      },
+      dayData: {
+        type: Object,
+        required: true,
+      },
+  },
   data () {
     return {
       checked: false

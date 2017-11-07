@@ -17,7 +17,12 @@
 <script>
 	export default {
 		name:     'conversationMessage',
-		props:    ['messageData'],
+		props:    {
+      messageData: {
+        type: Object,
+        required: true,
+      }
+    },
 		computed: {
       makeDateTime(){
         return new Date(Number(this.messageData.timestamp));
