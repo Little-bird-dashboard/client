@@ -1,5 +1,5 @@
 <template>
-    <div id="StatusBar">
+    <div id="statusBar">
         <nav class="navbar bg-primary student-status-bar">
             <div class="container">
                 <div class="row">
@@ -24,8 +24,13 @@
 <script>
 	import axios from 'axios'
 	export default {
-		name:    'StatusBar',
-		props:   ['studentData', 'messageData'],
+		name:    'statusBar',
+		props:   {
+      studentData: {
+        type: Object,
+        required: true,
+      },
+    },
 		data() {
 			return {}
 		},
@@ -47,10 +52,10 @@
 </script>
 
 <style>
-    #StatusBar .navbar .container {
+    #statusBar .navbar .container {
         height: 80px;
     }
-    #StatusBar .row .text-center {
+    #statusBar .row .text-center {
         height: 80px;
         margin-top: 40px;
     }

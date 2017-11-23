@@ -1,35 +1,35 @@
 <template>
-    <div id="StudentPage">
-      <loginValidator></loginValidator>
+    <div id="studentPage">
+      <LoginValidator></LoginValidator>
         <div>
             <StudentCard :guardianData="stakeholders" :studentData="student"/>
             <StatusBar :studentData="student"/>
         </div>
         <div class="container">
-            <conversationList :messages="communications" :studentId="studentId"></conversationList>
+            <ConversationList :messages="communications" :studentId="studentId"></ConversationList>
         </div>
         <div class="container">
-            <textInput :studentIdentifier="studentId" :studentData="student" :addTextToList="addTextToList"></textInput>
+            <TextInput :studentIdentifier="studentId" :studentData="student" :addTextToList="addTextToList"></TextInput>
         </div>
     </div>
 </template>
 
 <script>
 	import moment from 'moment'
-	import StatusBar from '../components/StatusBar/StatusBar.vue'
-	import StudentCard from '../components/StudentCard/StudentCard.vue'
-	import conversationList from '../components/conversationList/conversationList'
-	import textInput from '../components/textInput/textInput'
-  import loginValidator from '../components/loginValidator/loginValidator.vue'
+	import StatusBar from '../components/studentPage-components/StatusBar.vue'
+	import StudentCard from '../components/studentPage-components/StudentCard.vue'
+	import ConversationList from '../components/studentPage-components/ConversationList'
+	import TextInput from '../components/studentPage-components/TextInput'
+  import LoginValidator from '../components/LoginValidator.vue'
 
 	export default {
-		name:       'StudentPage',
+		name:       'studentPage',
 		components: {
 			StudentCard,
 			StatusBar,
-			conversationList,
-			textInput,
-      loginValidator
+			ConversationList,
+			TextInput,
+      LoginValidator
 		},
 		data() {
 			return {
@@ -62,7 +62,7 @@
 </script>
 
 <style>
-    #StudentPage {
+    #studentPage {
         font-family: 'Open Sans', sans-serif;
     }
     .conversations {

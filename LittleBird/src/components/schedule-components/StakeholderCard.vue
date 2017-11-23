@@ -1,5 +1,5 @@
 <template>
-  <div id="StakeholderCard">
+  <div id="stakeholderCard">
     <h4 class="text-right">
       {{stakeholderData.first_name}} {{stakeholderData.last_name}}
     </h4>
@@ -7,15 +7,20 @@
 </template>
 <script>
 export default {
-  name: "StakeholderCard",
-  props: ['stakeholderData'],
+  name: "stakeholderCard",
+  props: {
+    stakeholderData: {
+      type: Object,
+      required: true,
+    },
+  },
   data () {
     return {}
   }
 }
 </script>
 <style scoped>
-  #StakeholderCard{
+  #stakeholderCard{
     height: 68px;
     padding-top: 15px;
   }

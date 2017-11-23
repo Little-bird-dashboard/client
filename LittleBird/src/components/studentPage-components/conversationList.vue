@@ -1,16 +1,25 @@
 <template>
   <div class="conversationList">
-    <div id="conversationList" v-for="message in sortedMessages">
+    <div id="conversationList" v-for="message in sortedMessages" :key="message.id">
       <conversationMessage :messageData="message"></conversationMessage>
     </div>
   </div>
 </template>
 <script>
-import conversationMessage from '../conversationMessage/conversationMessage'
+import conversationMessage from './conversationMessage'
 
 export default {
   name: 'conversationList',
-  props: ['messages', 'studentId'],
+  props: {
+    messages: {
+      type: Array,
+      required: false,
+    },
+    studentId: {
+      type: Number,
+      required: true,
+    },
+  },
   components: {
     conversationMessage
   },

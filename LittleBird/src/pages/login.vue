@@ -1,6 +1,5 @@
 <template>
   <div id="login">
-
     <div class="bg-primary hero text-center">
       <img class="heroIcon" src="../../static/logo.png" alt="logo">
       <h2 class="title">Little Bird</h2>

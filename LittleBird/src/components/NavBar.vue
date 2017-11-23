@@ -1,14 +1,14 @@
 <template>
-    <div id="nav">
+    <div id="navBar">
         <nav class="navbar fixed-top sticky-top">
             <div class="container">
                 <div class="row">
-                    <a href="#"> <img class="icon" src="../../../static/logo.png" alt="logo"
+                    <a href="#"> <img class="icon" src="../../static/logo.png" alt="logo"
                         id="logo"></a>
                     <span id="title">Little Bird</span>
                     <div class="navbar-nav pull-right">
                       <!-- <button type="button" class="btn btn-primary" @click="showCustomModal = true"><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></button> -->
-                               <img id="teacher-img" class="icon" src="../../../static/teacher.jpg" alt="logo">
+                               <img id="teacher-img" class="icon" src="../../static/teacher.jpg" alt="logo">
                         </span></a>
                     </div>
                 </div>
@@ -64,7 +64,7 @@ import { modal } from 'vue-strap';
 </script>
 
 <style>
-    #nav {
+    #navBar {
         background-color: #3F51B5;
         width: 100%;
     }

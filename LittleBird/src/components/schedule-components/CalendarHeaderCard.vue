@@ -1,5 +1,5 @@
 <template>
-  <div id="CalendarHeaderCard">
+  <div id="calendarHeaderCard">
       <div class="card">
         <div class="row">
           <div class="col-lg-2 text-center">
@@ -15,8 +15,13 @@
 </template>
 <script>
 export default {
-  name: "CalendarHeaderCard",
-  props: ['studentData'],
+  name: "calendarHeaderCard",
+  props: {
+    studentData: {
+      type: Object,
+      required: true,
+    },
+  },
   data () {
     return {}
   }

@@ -4,16 +4,25 @@
             <h4>{{dayData.day}}</h4>
             <h4>at {{dayData.start_time}}</h4>
         </div>
-        <div v-for="stakeholder in stakeholdersData">
+        <div v-for="stakeholder in stakeholdersData" :key="stakeholder.id">
             <availableCard :dayData="dayData" :stakeholderData="stakeholder"></availableCard>
         </div>
     </div>
 </template>
 <script>
-	import availableCard from '../availableCard/availableCard'
+	import availableCard from './availableCard'
 	export default {
-		name:       "CalendarCard",
-		props:      ['dayData', 'stakeholdersData'],
+		name:       "calendarCard",
+		props:      {
+      dayData: {
+        type: Object,
+        required: true,
+      },
+      stakeholdersData: {
+        type: Object,
+        required: true,
+      },
+    },
 		components: {
 			availableCard
 		},
