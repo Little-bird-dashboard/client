@@ -16,7 +16,6 @@ export default {
       required: false,
     },
     studentId: {
-      type: Number,
       required: true,
     },
   },

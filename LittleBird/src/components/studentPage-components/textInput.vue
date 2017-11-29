@@ -22,7 +22,6 @@
       //   required: true,
       // },
       studentIdentifier: {
-        type: Number,
         required: true,
       },
       addTextToList: {

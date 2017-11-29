@@ -2,8 +2,9 @@
     <div id="studentPage">
       <LoginValidator></LoginValidator>
         <div>
-            <StudentCard :guardianData="stakeholders" :studentData="student"/>
-            <StatusBar :studentData="student"/>
+          <StakeHolderCard v-if="stakeholderListToggle" :stakeHolderList="stakeholders"></StakeHolderCard>
+          <StudentCard :flipStakeholderListToggle="toggleStakeholderList" :stakholderListShow="stakeholderListToggle" :guardianData="stakeholders" :studentData="student"/>
+          <StatusBar :studentData="student"/>
         </div>
         <div class="container">
             <ConversationList :messages="communications" :studentId="studentId"></ConversationList>
@@ -20,7 +21,8 @@
 	import StudentCard from '../components/studentPage-components/StudentCard.vue'
 	import ConversationList from '../components/studentPage-components/ConversationList'
 	import TextInput from '../components/studentPage-components/TextInput'
-  import LoginValidator from '../components/LoginValidator.vue'
+  import LoginValidator from '../components/LoginValidator'
+  import StakeHolderCard from '../components/studentPage-components/StakeHolderCard'
 
 	export default {
 		name:       'studentPage',
@@ -29,14 +31,16 @@
 			StatusBar,
 			ConversationList,
 			TextInput,
-      LoginValidator
+      LoginValidator,
+      StakeHolderCard
 		},
 		data() {
 			return {
 				studentId:      this.$route.params.student_id,
 				student:        {},
 				stakeholders:   [],
-				communications: []
+				communications: [],
+        stakeholderListToggle: false
 			}
 		},
 		mounted() {
@@ -54,8 +58,11 @@
 				})
 		},
     methods: {
-      addTextToList(message) {
+      addTextToList (message) {
         this.communications.push(message);
+      },
+      toggleStakeholderList () {
+        this.stakeholderListToggle = !this.stakeholderListToggle;
       }
     }
 	}
