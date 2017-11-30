@@ -17,6 +17,11 @@ export default {
     stakeHolderList: {
       type: Array,
       required: true
+    },
+  },
+  data () {
+    return {
+      stakeholders: {}
     }
   },
   computed: {
@@ -24,6 +29,16 @@ export default {
       return this.stakeHolderList.filter(stakeholder => {
         return stakeholder.stakeholder_type_id != 9
       })
+    },
+    sortedStakeholderList () {
+      let result = {}
+      this.filteredStakeholderList.forEach(stakeholder => {
+        if (!result[stakeholder.stakeholder_type]){
+          result[stakeholder.stakeholder_type] = []
+        }
+        result[stakeholder.stakeholder_type].push(stakeholder)
+      })
+      return result
     }
   }
 }
