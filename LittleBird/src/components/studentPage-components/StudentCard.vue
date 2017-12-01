@@ -110,7 +110,6 @@ import { modal } from 'vue-strap'
 		},
     watch: {
       guardianData(newData) {
-        console.log(newData);
         let parent  = newData.filter(guardian => {
           return guardian.stakeholder_type_id == 2;
         })[0];

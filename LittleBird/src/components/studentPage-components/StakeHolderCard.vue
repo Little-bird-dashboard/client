@@ -1,17 +1,17 @@
 <template>
   <div id='StakeHolderCard'>
-    <ul v-for="stakeholder in filteredStakeholderList">
-      <StakeHolderItem :stakeholderData="stakeholder"></StakeHolderItem>
+    <ul v-for="stakeholderList in sortedStakeholderList">
+      <StakeholderTypeList :stakeholderList="stakeholderList"></StakeholderTypeList>
     </ul>
   </div>
 </template>
 <script>
-import StakeHolderItem from './StakeHolderItem'
+import StakeholderTypeList from './StakeholderTypeList'
 
 export default {
   name: 'StakeHolderCard',
   components: {
-    StakeHolderItem
+    StakeholderTypeList
   },
   props: {
     stakeHolderList: {
@@ -21,7 +21,8 @@ export default {
   },
   data () {
     return {
-      stakeholders: {}
+      stakeholders: {},
+      stakeholderTypes: []
     }
   },
   computed: {
@@ -38,8 +39,12 @@ export default {
         }
         result[stakeholder.stakeholder_type].push(stakeholder)
       })
+      console.log('Stored stakeholder list', result);
       return result
     }
+  },
+  stakeholderTypes () {
+    this.stakeholderTypes = Object.keys(this.stakeholders)
   }
 }
 </script>
