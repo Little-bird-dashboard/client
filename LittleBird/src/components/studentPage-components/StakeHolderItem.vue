@@ -1,6 +1,6 @@
 <template>
   <li>
-    <h4>{{stakeholderData.first_name}} {{stakeholderData.last_name}}</h4>
+    <h5>{{stakeholderData.first_name}} {{stakeholderData.last_name}}</h5>
     <p>
       <a :href="stakeholderEmail">{{stakeholderData.email}}</a>
     </p>
@@ -23,7 +23,7 @@ export default {
 }
 </script>
 <style scoped>
-  p {
-    margin-left: 15px;
+  li {
+    margin-left: -15px;
   }
 </style>

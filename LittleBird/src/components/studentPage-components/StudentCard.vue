@@ -39,7 +39,7 @@
                         </div>
                         <div>
                           <h4>Stakeholders</h4><br />
-                          <p @click="flipStakeholderListToggle">{{stakeholderDisplay}} + {{stakeholerCount}} more  <i v-if="!stakholderListShow" class="fa fa-angle-down" aria-hidden="true"></i><i v-if="stakholderListShow" class="fa fa-angle-up" aria-hidden="true"></i></p>
+                          <p @click="flipStakeholderListToggle">{{stakeholderDisplay}} + {{stakeholerCount}} more  <i v-if="!stakeholderListShow" class="fa fa-angle-down" aria-hidden="true"></i><i v-if="stakeholderListShow" class="fa fa-angle-up" aria-hidden="true"></i></p>
                         </div>
                     </div>
                   </div>
@@ -90,7 +90,7 @@ import { modal } from 'vue-strap'
         type: Function,
         required: true
       },
-      stakholderListShow: {
+      stakeholderListShow: {
         type: Boolean,
         required: true
       }

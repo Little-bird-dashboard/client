@@ -2,8 +2,8 @@
     <div id="studentPage">
       <LoginValidator></LoginValidator>
         <div>
-          <StakeHolderCard v-if="stakeholderListToggle" :stakeHolderList="stakeholders"></StakeHolderCard>
-          <StudentCard :flipStakeholderListToggle="toggleStakeholderList" :stakholderListShow="stakeholderListToggle" :guardianData="stakeholders" :studentData="student"/>
+          <StakeHolderCard :flipStakeholderListToggle="toggleStakeholderList" v-if="stakeholderListToggle" :stakeHolderList="stakeholders"></StakeHolderCard>
+          <StudentCard :flipStakeholderListToggle="toggleStakeholderList" :stakeholderListShow="stakeholderListToggle" :guardianData="stakeholders" :studentData="student"/>
           <StatusBar :studentData="student"/>
         </div>
         <div class="container">

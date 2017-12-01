@@ -1,5 +1,8 @@
 <template>
   <div id='StakeHolderCard'>
+    <div class="close-button" @click="flipStakeholderListToggle">
+       <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
     <ul v-for="stakeholderList in sortedStakeholderList">
       <StakeholderTypeList :stakeholderList="stakeholderList"></StakeholderTypeList>
     </ul>
@@ -18,6 +21,10 @@ export default {
       type: Array,
       required: true
     },
+    flipStakeholderListToggle: {
+      type: Function,
+      required: true
+    }
   },
   data () {
     return {
@@ -58,9 +65,14 @@ export default {
     background-color: white;
     border-radius: 6px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
-    padding: 10px;
+    padding: 10px 10px 10px 0px;
   }
   ul {
     list-style: none;
+    margin-left: -10px;
+  }
+  .close-button {
+    text-align: right;
+    margin-right: 5px;
   }
 </style>

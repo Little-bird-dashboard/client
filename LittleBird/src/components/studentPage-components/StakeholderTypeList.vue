@@ -1,6 +1,6 @@
 <template>
   <li id='StakeholderTypeList'>
-    <h4>{{stakeholderList[0].stakeholder_type}}</h4>
+    <h5>{{stakeholderList[0].stakeholder_type}}</h5>
     <ul v-for="stakeholder in stakeholderList" :key="stakeholder.id">
       <StakeHolderItem :stakeholderData="stakeholder"></StakeHolderItem>
     </ul>
@@ -23,7 +23,10 @@ export default {
 }
 </script>
 <style scoped>
-ul {
-  list-style: none;
-}
+  ul {
+    list-style: none;
+  }
+  h5 {
+    font-weight: bold;
+  }
 </style>
