@@ -11,6 +11,7 @@
         <div class="container">
             <TextInput :studentIdentifier="studentId" :studentData="student" :addTextToList="addTextToList"></TextInput>
         </div>
+        <FeedbackButton></FeedbackButton>
     </div>
 </template>
 
@@ -21,6 +22,7 @@
 	import ConversationList from '../components/studentPage-components/ConversationList'
 	import TextInput from '../components/studentPage-components/TextInput'
   import LoginValidator from '../components/LoginValidator.vue'
+  import FeedbackButton from '../components/FeedbackButton'
 
 	export default {
 		name:       'studentPage',
@@ -29,7 +31,8 @@
 			StatusBar,
 			ConversationList,
 			TextInput,
-      LoginValidator
+      LoginValidator,
+      FeedbackButton
 		},
 		data() {
 			return {
