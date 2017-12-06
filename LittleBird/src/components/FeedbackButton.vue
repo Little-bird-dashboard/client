@@ -1,7 +1,7 @@
 <template>
   <div id='FeedbackButton'>
     <div class="toggle-btn-wrapper">
-      <button id="feedback-toggle-btn" type="button" @click="modalToggle = !modalToggle" class="btn btn-primary text-input-btn">Send Feedback</button>
+      <button id="feedback-toggle-btn" type="button" @click="modalToggle = !modalToggle" class="btn btn-primary text-input-btn">Send Little Bird Feedback</button>
     </div>
     <div v-if="modalToggle" id="feedbackModal">
       <form class="feedback-form" @submit.prevent="sendFeedback">
@@ -29,6 +29,7 @@ export default {
   methods: {
     sendFeedback() {
       console.log(this.feedbackText);
+      this.modalToggle = false;
     }
   }
 }
