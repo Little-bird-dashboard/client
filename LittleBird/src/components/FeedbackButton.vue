@@ -42,10 +42,10 @@ export default {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
     padding: 10px;
     margin-top: -150px;
-    position: absolute;
+    position: fixed;
     z-index: 99;
     bottom: 20px;
-    left: 40px;
+    right: 60px;
   }
   .feedback-form {
     display: flex;
