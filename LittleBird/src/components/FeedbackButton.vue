@@ -1,8 +1,6 @@
 <template>
   <div id='FeedbackButton'>
-    <div class="toggle-btn-wrapper">
-      <button id="feedback-toggle-btn" type="button" @click="modalToggle = !modalToggle" class="btn btn-primary text-input-btn">Send Little Bird Feedback</button>
-    </div>
+    <div id="feedback-toggle-btn" @click="modalToggle = !modalToggle"><i class="fa fa-comment" aria-hidden="true"></i></div>
     <div v-if="modalToggle" id="feedbackModal">
       <form class="feedback-form" @submit.prevent="sendFeedback">
         <textarea rows="3" cols="30" name="feedback" v-model="feedbackText" placeholder="Leave feedback for Little Bird..."></textarea><br />
@@ -36,8 +34,6 @@ export default {
 </script>
 <style scoped>
   #FeedbackButton {
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
     margin-bottom: 20px;
   }
   #feedbackModal {
@@ -46,19 +42,26 @@ export default {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
     padding: 10px;
     margin-top: -150px;
-    grid-column: 4;
+    position: absolute;
     z-index: 99;
+    bottom: 20px;
+    left: 40px;
   }
   .feedback-form {
     display: flex;
     flex-flow: column nowrap;
   }
-  .toggle-btn-wrapper{
-    grid-column: 3 / span 1;
-    margin: 0 auto;
-  }
   #feedback-toggle-btn {
     background-color: #3F51B5;
+    width: 30px;
+    padding: 5px;
+    border-radius: 45px;
+    color: white;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 98;
+    text-align: center;
   }
   textarea {
     border: none;
