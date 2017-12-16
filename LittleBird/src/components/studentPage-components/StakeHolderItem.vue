@@ -24,6 +24,6 @@ export default {
 </script>
 <style scoped>
   li {
-    margin-left: -15px;
+    margin-left: -28px;
   }
 </style>
