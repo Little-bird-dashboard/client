@@ -40,12 +40,12 @@ export default {
     background-color: white;
     border-radius: 6px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
-    padding: 10px;
+    padding: 16px;
     margin-top: -150px;
     position: fixed;
     z-index: 99;
-    bottom: 20px;
-    right: 60px;
+    bottom: 64px;
+    right: 20px;
   }
   .feedback-form {
     display: flex;
@@ -53,7 +53,8 @@ export default {
   }
   #feedback-toggle-btn {
     background-color: #3F51B5;
-    width: 30px;
+    width: 32px;
+    height: 32px;
     padding: 5px;
     border-radius: 45px;
     color: white;
@@ -66,6 +67,11 @@ export default {
   textarea {
     border: none;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    margin-bottom: -4px;
+    box-shadow: none;
+    border: 1px solid #CECDCD;
+    border-radius: 3px;
   }
   #feedback-btn {
     background-color: #3F51B5;
