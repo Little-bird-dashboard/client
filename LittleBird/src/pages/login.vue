@@ -51,6 +51,7 @@ export default {
           if(this.$session.exists()){
             this.$session.destroy();
           }
+          console.log(response);
           this.$session.set('token', response.data.token)
           // sessionStorage.setItem('timestamp', this.$options.moment.add(2, 'hours')
           this.$router.push('/dashboard')
