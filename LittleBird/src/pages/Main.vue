@@ -18,6 +18,7 @@
 	import StudentCard from '../components/dashboard-components/StudentCard.vue'
 	import SearchBar from '../components/dashboard-components/SearchBar.vue'
   import LoginValidator from '../components/LoginValidator'
+  import axios from 'axios'
 
 	export default {
 		name:       'main',
@@ -26,18 +27,30 @@
 			StudentCard,
 			SearchBar,
       LoginValidator
-		},
+    },
 		data() {
 			return {
-				cards: []
+				cards: [],
+        apiURL: 'https://littlebird-platform.herokuapp.com/students/',
+        devURL: 'http://localhost:3000/students'
 			}
 		},
 		mounted() {
 			//do something after mounting vue instance
-			axios.get('https://littlebird-platform.herokuapp.com/students/')
-				.then(response => {
-					this.cards = response.data
-				})
+      let token = this.$session.get('token')
+      axios({
+        method: 'get',
+        url: this.apiURL,
+        headers: {'Authorization': `Bearer ${token}`}
+      })
+      .then(response => {
+        this.cards = response.data
+      })
+
+			// axios.get(this.devURL)
+			// 	.then(response => {
+			// 		this.cards = response.data
+			// 	})
 		},
     computed: {
       activeStudents() {

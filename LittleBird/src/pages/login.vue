@@ -24,6 +24,8 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
+
 export default {
   name: "login",
   data() {
@@ -35,7 +37,8 @@ export default {
       blur: {
         email: false,
         password: false
-      }
+      },
+      apiURL: 'http://localhost:3000/auth/login'
     }
   },
   methods: {
@@ -46,14 +49,16 @@ export default {
         alert('Not a valid email address.');
       } else {
         this.user.email = this.user.email.toLowerCase();
-        axios.post('https://littlebird-platform.herokuapp.com/auth/login', this.user)
+        axios.post(this.apiURL, this.user)
         .then(response => {
           if(this.$session.exists()){
             this.$session.destroy();
           }
+          console.log('login', response.data);
           this.$session.set('token', response.data.token)
+          window.localStorage.setItem('load', JSON.stringify(response.data))
           // sessionStorage.setItem('timestamp', this.$options.moment.add(2, 'hours')
-          this.$router.push('/dashboard')
+          this.$router.push({ name: 'main' })
         })
         .catch(err => {
           alert(err);
@@ -64,9 +69,6 @@ export default {
     },
     validEmail (value) {
       const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-      console.log(typeof value == 'string');
-      console.log(value.trim() != '');
-      console.log(emailRegex.test(value));
       return typeof value == 'string' && value.trim() != '' && emailRegex.test(value.toLowerCase());
     }
   }
