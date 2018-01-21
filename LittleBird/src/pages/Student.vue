@@ -22,7 +22,7 @@
 	import StudentCard from '../components/studentPage-components/StudentCard.vue'
 	import ConversationList from '../components/studentPage-components/ConversationList'
 	import TextInput from '../components/studentPage-components/TextInput'
-  import LoginValidator from '../components/loginValidator'
+  import LoginValidator from '../components/LoginValidator'
   import FeedbackButton from '../components/FeedbackButton'
   import StakeHolderCard from '../components/studentPage-components/StakeHolderCard'
 

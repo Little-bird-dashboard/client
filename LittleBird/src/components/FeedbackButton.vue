@@ -33,9 +33,9 @@ export default {
   },
   methods: {
     sendFeedback() {
-      console.log(this.feedbackText);
+      console.log(this.user);
       this.buttonText = 'Sending...'
-      emailjs.send("gmail","feedback_email",{to_email: 'baker.marlena@gmail.com', from_name: "Test", message_html: this.feedbackText})
+      emailjs.send("gmail","feedback2",{name: "Test", message_html: this.feedbackText, school:this.user.school, stakeholder_roll:this.user.type})
       .then((response) => {
          this.modalSuccess = true
          this.feedbackText = ''
