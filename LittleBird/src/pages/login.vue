@@ -38,7 +38,8 @@ export default {
         email: false,
         password: false
       },
-      apiURL: 'http://localhost:3000/auth/login'
+      apiURL: 'https://littlebird-platform.herokuapp.com/auth/login',
+      devURL: 'http://localhost:3000/auth/login'
     }
   },
   methods: {
@@ -56,6 +57,7 @@ export default {
           }
           console.log('login', response.data);
           this.$session.set('token', response.data.token)
+          window.localStorage.clear();
           window.localStorage.setItem('load', JSON.stringify(response.data))
           // sessionStorage.setItem('timestamp', this.$options.moment.add(2, 'hours')
           this.$router.push({ name: 'main' })
