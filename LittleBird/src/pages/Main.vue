@@ -31,8 +31,9 @@
 		data() {
 			return {
 				cards: [],
-        apiURL: 'https://littlebird-platform.herokuapp.com/students/',
-        devURL: 'http://localhost:3000/students'
+        userData: JSON.Parse(window.localStorage.getItem('load'))
+        apiURL: 'https://littlebird-platform.herokuapp.com/studentList/',
+        devURL: 'http://localhost:3000/studentList/'
 			}
 		},
 		mounted() {
@@ -40,7 +41,7 @@
       let token = this.$session.get('token')
       axios({
         method: 'get',
-        url: this.apiURL,
+        url: `${this.apiURL}${userData.id}`,
         headers: {'Authorization': `Bearer ${token}`}
       })
       .then(response => {
