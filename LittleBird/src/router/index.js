@@ -31,7 +31,8 @@ export default new Router({
 		{
 			path:      '/dashboard',
 			name:      'main',
-			component: Main
+			component: Main,
+			props: true
 		}, {
 			path: '/students/:student_id',
 			name: 'StudentPage',
