@@ -59,19 +59,29 @@ export default {
   #StakeHolderCard {
     width: 350px;
     position: absolute;
+<<<<<<< HEAD
     top: 146px;
     right: 3%;
+=======
+    top: 175px;
+    right: 15%;
+>>>>>>> feedback button added to main, positioning on student page wip
     z-index: 99;
     background-color: white;
     border-radius: 6px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+<<<<<<< HEAD
     padding: 16px 10px 16px 0px;
+=======
+    padding: 10px 10px 10px 0px;
+>>>>>>> feedback button added to main, positioning on student page wip
   }
   ul {
     list-style: none;
     margin-left: -10px;
   }
   .close-button {
+<<<<<<< HEAD
     float: right;
     margin-right: -34px;
     cursor: pointer;
@@ -79,5 +89,9 @@ export default {
   }
   #icon-small {
     height: 16px;
+=======
+    text-align: right;
+    margin-right: 5px;
+>>>>>>> feedback button added to main, positioning on student page wip
   }
 </style>
