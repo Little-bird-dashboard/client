@@ -40,7 +40,7 @@ export default {
          this.feedbackText = ''
          this.buttonText = 'Send'
         }, function(err) {
-         console.error("FAILED. error=", err)
+         console.log("FAILED. error=", err)
          alert("Feedback form failed. Please email team@trylittlebird.com")
         })
     }
