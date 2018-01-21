@@ -31,7 +31,6 @@
 		data() {
 			return {
 				cards: [],
-        userData: JSON.Parse(window.localStorage.getItem('load'))
         apiURL: 'https://littlebird-platform.herokuapp.com/studentList/',
         devURL: 'http://localhost:3000/studentList/'
 			}
@@ -39,9 +38,10 @@
 		mounted() {
 			//do something after mounting vue instance
       let token = this.$session.get('token')
+      let userId = JSON.parse(window.localStorage.getItem('load')).id
       axios({
         method: 'get',
-        url: `${this.apiURL}${userData.id}`,
+        url: `${this.apiURL}${userId}`,
         headers: {'Authorization': `Bearer ${token}`}
       })
       .then(response => {
