@@ -30,8 +30,10 @@
 	export default {
 		name:  'studentCard',
 		props: {
-      cardData: Object,
-      required: true,
+      cardData: {
+        type: Object,
+        required: true,
+      }
     },
 		data() {
 			return {

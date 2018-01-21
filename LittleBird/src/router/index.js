@@ -6,6 +6,7 @@ import Axios from 'axios'
 import Student from '../pages/Student.vue'
 import CalendarPoll from '../pages/CalendarPoll'
 import Login from '../pages/Login.vue'
+import AdminPage from '../pages/AdminPage'
 
 Axios.defaults.headers.common.Accept = 'application'
 
@@ -32,7 +33,13 @@ export default new Router({
 			path:      '/dashboard',
 			name:      'main',
 			component: Main
-		}, {
+		},
+		{
+			path:      '/admin',
+			name:      'admin',
+			component:  AdminPage
+		},
+		 {
 			path: '/students/:student_id',
 			name: 'StudentPage',
 			component: Student
