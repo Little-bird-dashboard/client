@@ -27,7 +27,8 @@ export default {
       modalToggle: false,
       feedbackText: '',
       modalSuccess: false,
-      buttonText: 'Send'
+      buttonText: 'Send',
+      user: JSON.parse(window.localStorage.getItem('load'))
     }
   },
   methods: {
