@@ -20,8 +20,9 @@
     "vue-localstorage": "^0.4.1",
     "vue-moment": "^2.0.2",
     "vue-router": "^2.6.0",
-    "vue-session": "^0.9.5",
-    "vue-strap": "^1.1.37"
+    "vue-session": "^0.9.10",
+    "vue-strap": "^1.1.37",
+    "vuejs-jwt": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
