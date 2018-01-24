@@ -10,7 +10,7 @@
                     <div @click="followUpText" class="col-lg-4 text-center">
                         <img id="icon-large" src="/static/paper-plane.svg">
                         <span v-if="!contact_date">
-                          Initial Contact: No Contact Yet
+                          Initial Contact: No Texts Yet
                         </span>
                         <span v-if="contact_date">
                           Initial Contact: {{}}
@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-lg-4 text-center" @click="textPage">
                         <img id="icon-large" src="/static/calendar-add.svg">
-                        Initialize IEP Contact
+                        IEP Meeting: Unscheduled
                     </div>
                 </div>
             </div>
