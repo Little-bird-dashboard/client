@@ -32,7 +32,6 @@ export default {
   },
   methods: {
     sendFeedback() {
-      console.log(this.feedbackText);
       this.buttonText = 'Sending...'
       emailjs.send("gmail","feedback_email",{to_email: 'baker.marlena@gmail.com', from_name: "Test", message_html: this.feedbackText})
       .then((response) => {
@@ -40,7 +39,7 @@ export default {
          this.feedbackText = ''
          this.buttonText = 'Send'
         }, function(err) {
-         console.log("FAILED. error=", err)
+         console.error("FAILED. error=", err)
          alert("Feedback form failed. Please email team@trylittlebird.com")
         })
     }

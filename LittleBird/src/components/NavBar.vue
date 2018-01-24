@@ -3,8 +3,8 @@
         <nav class="navbar fixed-top sticky-top">
             <div class="container">
                 <div class="row">
-                    <a href="#"> <img class="icon" src="../../static/logo.png" alt="logo"
-                        id="logo"></a>
+                    <img class="icon" src="../../static/logo.png" alt="logo"
+                        id="logo">
                     <span id="title">Little Bird</span>
                     <div class="navbar-nav pull-right">
                       <!-- <button type="button" class="btn btn-primary" @click="showCustomModal = true"><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></button> -->

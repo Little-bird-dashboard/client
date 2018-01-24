@@ -50,7 +50,7 @@ export default {
         alert('Not a valid email address.');
       } else {
         this.user.email = this.user.email.toLowerCase();
-        fetch(this.devURL, {
+        fetch(this.apiURL, {
           method: "POST",
           headers: new Headers({
             "Content-Type": "application/json"
@@ -59,7 +59,6 @@ export default {
         })
         .then(response => {
           if(!response.ok){
-            console.error(response);
             return {error:response.statusText}
           } else {
           return response.json()
