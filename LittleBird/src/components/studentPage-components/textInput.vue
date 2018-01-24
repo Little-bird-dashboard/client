@@ -42,23 +42,30 @@
 					.then(response => {
 						this.addText(response.data[0]);
 					})
+          .catch(err => console.error(err))
         } else {
           alert("Please enter a message before sending.")
         }
 			},
       addText(data) {
+        console.log(this.stakeholderDetails);
         this.addTextToList({
-          stakeholder_type: 'Special Education Coordinator',
-          first_name:'Jaclyn',
-          last_name:'Moore',
+          stakeholder_type: this.stakeholderDetails.type,
+          first_name: this.stakeholderDetails.first_name,
+          last_name: this.stakeholderDetails.last_name,
           raw_body: data.raw_body,
           timestamp: new Date(),
           communication_type: 'text',
-          stakeholder_id: 1
+          stakeholder_id: this.stakeholderDetails.id
         })
         this.text = '';
       }
-		}
+		},
+    computed: {
+      stakeholderDetails() {
+        return JSON.parse(window.localStorage.getItem('load'))
+      }
+    }
 	}
 </script>
 <style scoped>

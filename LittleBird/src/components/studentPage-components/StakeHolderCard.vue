@@ -8,6 +8,7 @@
     </ul>
   </div>
 </template>
+
 <script>
 import StakeholderTypeList from './StakeholderTypeList'
 

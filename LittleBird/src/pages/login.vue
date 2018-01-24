@@ -50,21 +50,38 @@ export default {
         alert('Not a valid email address.');
       } else {
         this.user.email = this.user.email.toLowerCase();
-        axios.post(this.apiURL, this.user)
+        fetch(this.devURL, {
+          method: "POST",
+          headers: new Headers({
+            "Content-Type": "application/json"
+          }),
+          body: JSON.stringify(this.user)
+        })
         .then(response => {
-          if(this.$session.exists()){
-            this.$session.destroy();
+          if(!response.ok){
+            console.error(response);
+            return {error:response.statusText}
+          } else {
+          return response.json()
+        }
+        })
+        .then(response => {
+          if(response.error){
+            alert(response.error)
           }
-          console.log('login', response.data);
-          this.$session.set('token', response.data.token)
+          if(this.$session.exists()){
+              this.$session.destroy();
+          }
+          this.$session.set('token', response.token)
           window.localStorage.clear();
-          window.localStorage.setItem('load', JSON.stringify(response.data))
+          window.localStorage.setItem('load', JSON.stringify(response))
           // sessionStorage.setItem('timestamp', this.$options.moment.add(2, 'hours')
           this.$router.push({ name: 'main' })
         })
         .catch(err => {
-          alert(err);
-        })}
+          console.error(err)
+        });
+      }
       },
     isEmpty (value) {
       return value.trim() === ''
