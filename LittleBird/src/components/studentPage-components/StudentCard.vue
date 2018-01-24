@@ -80,19 +80,19 @@ import { modal } from 'vue-strap'
 		props: {
       studentData: {
         type: Object,
-        required: true,
+        required: false,
       },
       guardianData: {
         type: Array,
-        required: true,
+        required: false,
       },
       flipStakeholderListToggle: {
         type: Function,
-        required: true
+        required: false
       },
       stakeholderListShow: {
         type: Boolean,
-        required: true
+        required: false
       }
     },
     components: {
@@ -129,7 +129,18 @@ import { modal } from 'vue-strap'
       },
       stakeholderDisplay () {
         return `${this.guardianData[0].first_name} ${this.guardianData[0].last_name}`;
-      }
+      },
+      // parentFilter () {
+      //   return this.guardianData.filter(guardian => {
+      //      return guardian.stakeholder_type_id == 2;
+      //    })[0];
+      // },
+      // parentCell () {
+      //   return this.parentFilter.cell;
+      // },
+      // parentName () {
+      //   return `${this.parentFilter.first_name} ${this.parentFilter.last_name}`
+      // }
     },
     methods: {
       formatPhone () {

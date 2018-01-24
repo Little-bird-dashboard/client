@@ -5,15 +5,20 @@
                 <div class="row">
                     <div class="col-lg-4 text-center">
                         <img id="icon-large" src="/static/calendar-white.svg">
-                        Due: {{this.studentData.IEP_deadline | moment("MMMM Do YYYY")}}
+                        Due: {{studentData.IEP_deadline | moment("MMMM Do YYYY")}}
                     </div>
                     <div @click="followUpText" class="col-lg-4 text-center">
                         <img id="icon-large" src="/static/paper-plane.svg">
-                        Initial Contact: August 9th
+                        <span v-if="!contact_date">
+                          Initial Contact: No Texts Yet
+                        </span>
+                        <span v-if="contact_date">
+                          Initial Contact: {{}}
+                        </span>
                     </div>
                     <div class="col-lg-4 text-center" @click="textPage">
                         <img id="icon-large" src="/static/calendar-add.svg">
-                        Initialize IEP Contact
+                        IEP Meeting: Unscheduled
                     </div>
                 </div>
             </div>
@@ -37,7 +42,7 @@
 		methods: {
 			textPage() {
 				axios.post(`https://littlebird-platform.herokuapp.com/sms/initiate/${this.studentData.id}`)
-                    .then(response => {
+            .then(response => {
 						this.cards = response.data
 					})
 			},
@@ -45,10 +50,12 @@
         axios.post(`https://littlebird-platform.herokuapp.com/sms/confirm/${this.studentData.id}`)
       }
 		},
-		mounted() {
-			//do something after mounting vue instance
-		}
-	}
+    computed: {
+      makeDateTime(){
+          return new Date(Number(this.contact_date));
+        }
+      }
+    }
 </script>
 
 <style>
