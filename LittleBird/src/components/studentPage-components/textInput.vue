@@ -48,7 +48,6 @@
         }
 			},
       addText(data) {
-        console.log(this.stakeholderDetails);
         this.addTextToList({
           stakeholder_type: this.stakeholderDetails.type,
           first_name: this.stakeholderDetails.first_name,
