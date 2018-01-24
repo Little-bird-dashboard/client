@@ -25,11 +25,7 @@
     },
 		components: {
 			availableCard
-		},
-    mounted() {
-      //do something after mounting vue instance
-      console.log(this.dayData)
-    }
+		}
 	}
 </script>
 <style scoped>

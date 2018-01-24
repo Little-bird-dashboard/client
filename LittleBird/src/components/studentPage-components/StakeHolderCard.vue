@@ -47,7 +47,6 @@ export default {
         }
         result[stakeholder.stakeholder_type].push(stakeholder)
       })
-      console.log('Stored stakeholder list', result);
       return result
     }
   },

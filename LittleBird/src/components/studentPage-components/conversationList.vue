@@ -34,16 +34,6 @@ export default {
       })
     }
   },
-  // mounted() {
-  //   setInterval(function(){
-  //     axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/communications`)
-	// 			.then(response => {
-	// 				this.returnedMessageData = response.data
-	// 		})
-  //     console.log('10:', this.returnedMessageData)
-  //   }, 10000);
-  //
-  // }
 }
 </script>
 <style scoped>
