@@ -9,11 +9,11 @@
                     </div>
                     <div @click="followUpText" class="col-lg-4 text-center">
                         <img id="icon-large" src="/static/paper-plane.svg">
-                        <span v-if="!studentData.last_communication">
+                        <span v-if="!studentData.first_communication">
                           Initial Contact: No Texts Yet
                         </span>
-                        <!-- <span v-if="studentData.last_communication">
-                          Initial Contact: {{studentData.last_communication | moment("MMMM Do YYYY")}}
+                        <!-- <span v-if="studentData.first_communication">
+                          Initial Contact: {{studentData.first_communication | moment("MMMM Do YYYY")}}
                         </span> -->
                     </div>
                     <div class="col-lg-4 text-center" @click="textPage">
