@@ -12,6 +12,7 @@
         <div class="container">
             <TextInput :studentIdentifier="studentId" :studentData="student" :addTextToList="addTextToList"></TextInput>
         </div>
+        <FeedbackButton></FeedbackButton>
     </div>
 </template>
 
@@ -22,6 +23,7 @@
 	import ConversationList from '../components/studentPage-components/ConversationList'
 	import TextInput from '../components/studentPage-components/TextInput'
   import LoginValidator from '../components/LoginValidator'
+  import FeedbackButton from '../components/FeedbackButton'
   import StakeHolderCard from '../components/studentPage-components/StakeHolderCard'
 
 	export default {
@@ -32,7 +34,8 @@
 			ConversationList,
 			TextInput,
       LoginValidator,
-      StakeHolderCard
+      StakeHolderCard,
+      FeedbackButton
 		},
 		data() {
 			return {

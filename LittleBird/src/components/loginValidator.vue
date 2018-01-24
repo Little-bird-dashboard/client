@@ -1,12 +1,12 @@
 <template>
-  <div id="loginValidator">
+  <div id="LoginValidator">
 
   </div>
 </template>
 <script>
 
 export default {
-  name: "loginValidator",
+  name: "LoginValidator",
   mounted() {
     if(!this.$session.has('token')){
       this.$router.push('/')
