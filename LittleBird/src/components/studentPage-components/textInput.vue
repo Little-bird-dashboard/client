@@ -1,16 +1,21 @@
 <template>
-    <div id="textInput">
-        <form>
-            <div class="row topMargin stickyInput">
-                    <div class="col-xs-9 col-xs-offset-1">
-                        <input id="text-input" type="text" class="form-control" v-model="text" @keyup.enter="none">
-                    </div>
-                    <div class="col-xs-1">
-                        <button id="input-btn" type="button" @click="sendText" class="btn btn-primary text-input-btn">Send Text</button>
-                    </div>
-
-            </div>
-        </form>
+    <div class="fixed">
+      <div id="textInput" class="conversationList row topMargin stickyInput">
+          <form>
+              <div class="conversationMessage">
+                  <div class="row">
+                      <div class="col-lg-1">
+                      </div>
+                      <div class="col-lg-10">
+                          <input id="text-input" type="text" class="form-control" v-model="text" @keyup.enter="none">
+                      </div>
+                      <div class="col-xs-1">
+                          <button id="input-btn" type="button" @click="sendText" class="btn btn-primary text-input-btn">Send Text</button>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
     </div>
 </template>
 <script>
@@ -76,21 +81,37 @@
       flex-direction: column;
       align-items: center;
     }
-    #textInput .col-xs-9 {
-        padding-left: 0;
-        width: 76.67%;
-        margin-left: 5.33%;
+    .fixed {
+        height: 72px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin: auto;
     }
-    #textInput .col-xs-1 {
+    #textInput .col-lg-1 {
+        width: 8.33%
+    }
+    #textInput .col-lg-10 {
+        width: 80%;
         padding-left: 0;
+        padding-right: 0;
     }
     .stickyInput {
         background-color: #FFF;
         height: 72px;
-        position: fixed;
+        position: relative;
         bottom: 0;
-        width: 100%;
-        margin-right: 0px;
+        width: 79%;
+        margin: 0 auto;
+    }
+    .conversationMessage {
+        width: 91%;
+        margin: 0 auto;
+    }
+    .row {
+        margin-left: -15;
+        margin-right: -15;
     }
     #text-input {
         height: 32px;
