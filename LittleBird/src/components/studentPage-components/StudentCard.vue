@@ -174,7 +174,7 @@ import { modal } from 'vue-strap'
 
 <style scoped>
     #StudentCard .card-block .container {
-        height: 164px;
+        max-height: 300px;
     }
     .grid-row {
       display: grid;

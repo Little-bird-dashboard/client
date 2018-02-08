@@ -11,6 +11,7 @@
             </div>
         </div>
         <FeedbackButton></FeedbackButton>
+        <LogoutButton></LogoutButton>
     </div>
 </template>
 
@@ -21,6 +22,7 @@
 	import SearchBar from '../components/dashboard-components/SearchBar.vue'
   import LoginValidator from '../components/LoginValidator'
   import FeedbackButton from '../components/FeedbackButton'
+  import LogoutButton from '../components/LogoutButton'
 
 	export default {
 		name:       'main',
@@ -29,7 +31,8 @@
 			StudentCard,
 			SearchBar,
       LoginValidator,
-      FeedbackButton
+      FeedbackButton,
+      LogoutButton
 		},
 		data() {
 			return {

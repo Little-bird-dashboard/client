@@ -71,7 +71,8 @@ export default {
           if(this.$session.exists()){
               this.$session.destroy();
           }
-          this.$session.set('token', response.token)
+          window.sessionStorage.clear()
+          window.sessionStorage.setItem('token', response.token)
           window.localStorage.clear();
           window.localStorage.setItem('load', JSON.stringify(response))
           // sessionStorage.setItem('timestamp', this.$options.moment.add(2, 'hours')
