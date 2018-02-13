@@ -1,7 +1,7 @@
 <template>
     <div id="statusBar">
         <nav class="navbar bg-primary student-status-bar">
-                <div class="row">
+                <div class="row container icon-wrapper">
                     <div class="col-lg-4 text-center status-item">
                         <img id="icon-large" src="/static/calendar-white.svg">
                         Due: {{studentData.IEP_deadline | moment("MMMM Do YYYY")}}
@@ -59,6 +59,9 @@
 <style>
     .text-center {
         font-size: 18px;
+    }
+    .icon-wrapper {
+      margin: 0 auto;
     }
     .student-status-bar {
         background-color: #3F51B5 !important;
