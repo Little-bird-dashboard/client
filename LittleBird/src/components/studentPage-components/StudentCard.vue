@@ -4,8 +4,8 @@
           <router-link :to="{path:'/dashboard'}"><img id="icon-large" src="/static/cross.svg"></router-link>
       </div>
       <div class="row" v-if="studentData">
-        <div class="col-lg-2">
-            <img id="studentPicture" v-bind:src="studentData.profile_img"/>
+        <div class="col-lg-2 align-items-end">
+            <img id="studentPicture" class="align-items-end" v-bind:src="studentData.profile_img"/>
         </div>
 
           <div class="col-lg-10">
