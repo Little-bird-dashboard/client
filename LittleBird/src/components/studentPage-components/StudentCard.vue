@@ -4,7 +4,7 @@
           <router-link :to="{path:'/dashboard'}"><img id="icon-large" src="/static/cross.svg"></router-link>
       </div>
       <div class="row" v-if="studentData">
-        <div class="col-lg-2 align-items-end">
+        <div class="col-lg-2 align-bottom student-picture-wrapper">
             <img id="studentPicture" class="align-items-end" v-bind:src="studentData.profile_img"/>
         </div>
 
@@ -14,7 +14,7 @@
                     {{ studentData.first_name }} {{ studentData.last_name }}
                 </h1>
             </div>
-            <div class="row"
+            <div class="row">
               <div class="col-lg-4">
                <span>
                  <h4>Student ID: </h4><h5>{{ studentData.student_id }}</h5>
@@ -39,6 +39,8 @@
               </div>
             </div>
             </div>
+
+          </div>
             <!-- <div class="row">
                 <div class="col-lg-4 pull-right text-center">
                     <button class="btn btn-success h2">Edit</button>
@@ -175,7 +177,7 @@ import { modal } from 'vue-strap'
         margin-left: 56px;
     }
     h1 {
-        margin-top: 32px;
+        margin-top: 0px;
     }
     h4, h5 {
         display: inline;
@@ -187,8 +189,7 @@ import { modal } from 'vue-strap'
       display: none;
     }
     .student-picture-wrapper {
-      width: 50%;
-      margin: 0 auto;
+      margin-top: 30px;
     }
     .dash-button {
       float: right;
