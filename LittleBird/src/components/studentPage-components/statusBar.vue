@@ -1,13 +1,12 @@
 <template>
     <div id="statusBar">
         <nav class="navbar bg-primary student-status-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 text-center">
+                <div class="row container icon-wrapper">
+                    <div class="col-lg-4 text-center status-item">
                         <img id="icon-large" src="/static/calendar-white.svg">
                         Due: {{studentData.IEP_deadline | moment("MMMM Do YYYY")}}
                     </div>
-                    <div @click="followUpText" class="col-lg-4 text-center">
+                    <div @click="followUpText" class="col-lg-4 text-center status-item">
                         <img id="icon-large" src="/static/paper-plane.svg">
                         <span v-if="!studentData.first_communication">
                           Initial Contact: No Texts Yet
@@ -16,12 +15,11 @@
                           Initial Contact: {{studentData.first_communication | moment("MMMM Do YYYY")}}
                         </span> -->
                     </div>
-                    <div class="col-lg-4 text-center" @click="textPage">
+                    <div class="col-lg-4 text-center status-item" @click="textPage">
                         <img id="icon-large" src="/static/calendar-add.svg">
                         IEP Meeting: Unscheduled
                     </div>
                 </div>
-            </div>
         </nav>
     </div>
 </template>
@@ -59,15 +57,11 @@
 </script>
 
 <style>
-    #statusBar .navbar .container {
-        height: 80px;
-    }
-    #statusBar .row .text-center {
-        height: 80px;
-        margin-top: 40px;
-    }
     .text-center {
         font-size: 18px;
+    }
+    .icon-wrapper {
+      margin: 0 auto;
     }
     .student-status-bar {
         background-color: #3F51B5 !important;
@@ -78,6 +72,9 @@
     }
     .pointer {
       cursor: pointer;
+    }
+    .status-item{
+      padding: 20px 0 20px 0;
     }
     img#icon-large {
         height: 40px;
