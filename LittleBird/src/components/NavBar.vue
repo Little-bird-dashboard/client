@@ -7,9 +7,9 @@
                         id="logo">
                     <span id="title">Little Bird</span>
                     <div class="navbar-nav pull-right">
+                      <button type="button" class="btn" @click="logOut">Logout</button>
                       <!-- <button type="button" class="btn btn-primary" @click="showCustomModal = true"><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></button> -->
-                               <img id="teacher-img" class="icon" src="../../static/teacher.jpg" alt="logo">
-                        </span></a>
+                      <img id="teacher-img" class="icon" src="../../static/teacher.jpg" alt="logo">
                     </div>
                 </div>
             </div>
@@ -58,6 +58,11 @@ import { modal } from 'vue-strap';
         .then(respose => {
           window.location.reload();
         });
+      },
+      logOut() {
+        this.$session.destroy();
+        window.localStorage.clear();
+        this.$router.push({ name: 'login' })
       }
     }
 	}
@@ -96,5 +101,8 @@ import { modal } from 'vue-strap';
     .top-align {
         margin-top: auto;
         margin-bottom: auto;
+    }
+    button {
+      background-color: white;
     }
 </style>
