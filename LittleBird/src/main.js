@@ -8,8 +8,7 @@ import VueSession from 'vue-session';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import VueJWT from 'vuejs-jwt';
-
-
+import store from './store/index';
 
 Vue.use(require('vue-moment'));
 Vue.use(VueLocalStorage);
@@ -21,6 +20,7 @@ Vue.config.productionTip = false
 new Vue({
 	el:         '#app',
 	router,
+	store,
 	template:   '<App/>',
 	components: { App }
 })

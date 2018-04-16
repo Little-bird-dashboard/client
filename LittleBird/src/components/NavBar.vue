@@ -8,7 +8,7 @@
                     <span id="title">Little Bird</span>
                     <div class="navbar-nav pull-right">
                       <!-- <button type="button" class="btn btn-primary" @click="showCustomModal = true"><i class="fa fa-plus fa-inverse fa-3x" aria-hidden="true"></i></button> -->
-                               <img id="teacher-img" class="icon" src="../../static/teacher.jpg" alt="logo">
+                               <!-- <img id="teacher-img" class="icon" src="../../static/teacher.jpg" alt="logo"> -->
                         </span></a>
                     </div>
                 </div>
