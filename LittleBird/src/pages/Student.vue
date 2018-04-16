@@ -46,19 +46,8 @@
         stakeholderListToggle: false
 			}
 		},
-		mounted() {
-			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}`)
-				.then(response => {
-					this.student = response.data[0]
-				})
-			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/stakeholders`)
-				.then(response => {
-					this.stakeholders = response.data
-				})
-			axios.get(`https://littlebird-platform.herokuapp.com/students/${this.studentId}/communications`)
-				.then(response => {
-					this.communications = response.data
-				})
+		created() {
+		   this.$store.dispatch('getStudentData', this.studentId)
 		},
     methods: {
       addTextToList (message) {

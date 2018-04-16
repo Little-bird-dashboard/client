@@ -15,7 +15,6 @@
 </template>
 
 <script>
-  import axios from 'axios'
 	import NavBar from '../components/NavBar.vue'
 	import StudentCard from '../components/dashboard-components/StudentCard.vue'
 	import SearchBar from '../components/dashboard-components/SearchBar.vue'
