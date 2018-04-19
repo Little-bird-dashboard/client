@@ -1,16 +1,16 @@
 <template>
     <div id="studentPage">
       <LoginValidator></LoginValidator>
-        <div>
-          <StakeHolderCard :flipStakeholderListToggle="toggleStakeholderList" v-if="stakeholderListToggle" :stakeHolderList="stakeholders"></StakeHolderCard>
-          <StudentCard :flipStakeholderListToggle="toggleStakeholderList" :stakeholderListShow="stakeholderListToggle" :guardianData="stakeholders" :studentData="student"/>
-          <StatusBar :studentData="student"/>
+        <div v-if="studentReady">
+          <StakeHolderCard :flipStakeholderListToggle="toggleStakeholderList" v-if="stakeholderListToggle" :stakeHolderList="currentStudentStakeholders"></StakeHolderCard>
+          <StudentCard :flipStakeholderListToggle="toggleStakeholderList" :stakeholderListShow="stakeholderListToggle" :guardianData="currentStudentStakeholders" :studentData="currentStudentData"/>
+          <StatusBar :studentData="currentStudentData"/>
         </div>
-        <div class="container">
-            <ConversationList :messages="communications" :studentId="studentId"></ConversationList>
+        <div class="container" v-if="studentReady">
+            <ConversationList :messages="currentStudentCommunications" :studentId="studentId"></ConversationList>
         </div>
-        <div class="container">
-            <TextInput :studentIdentifier="studentId" :studentData="student" :addTextToList="addTextToList"></TextInput>
+        <div class="container" v-if="studentReady">
+            <TextInput :studentIdentifier="studentId" :studentData="currentStudentData" :addTextToList="addTextToList"></TextInput>
         </div>
         <FeedbackButton></FeedbackButton>
     </div>
@@ -25,6 +25,7 @@
   import LoginValidator from '../components/LoginValidator'
   import FeedbackButton from '../components/FeedbackButton'
   import StakeHolderCard from '../components/studentPage-components/StakeHolderCard'
+  import { mapGetters } from 'vuex'
 
 	export default {
 		name:       'studentPage',
@@ -39,16 +40,21 @@
 		},
 		data() {
 			return {
-				studentId:      this.$route.params.student_id,
-				student:        {},
-				stakeholders:   [],
-				communications: [],
+				studentId: this.$route.params.student_id,
         stakeholderListToggle: false
 			}
 		},
 		created() {
 		   this.$store.dispatch('getStudentData', this.studentId)
 		},
+    computed: {
+      ...mapGetters([
+        'currentStudentData',
+        'currentStudentStakeholders',
+        'currentStudentCommunications',
+        'studentReady'
+      ])
+    },
     methods: {
       addTextToList (message) {
         this.communications.push(message);

@@ -33,7 +33,7 @@
 		props:   {
       studentData: {
         type: Object,
-        required: true,
+        required: false,
       },
     },
 		data() {
@@ -43,7 +43,7 @@
 			textPage() {
 				axios.post(`https://littlebird-platform.herokuapp.com/sms/initiate/${this.studentData.id}`)
             .then(response => {
-						this.cards = response.data
+						this.cards = response.dat
 					})
 			},
       followUpText() {

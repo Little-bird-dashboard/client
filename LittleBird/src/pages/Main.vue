@@ -5,7 +5,7 @@
         <div class="container flexbox">
             <!-- <SearchBar/> -->
             <div class="row">
-                <div v-for="card in $store.state.students" class="cards" :key="card.id">
+                <div v-for="card in activeStudents" class="cards" :key="card.id">
                     <StudentCard :cardData="card"></StudentCard>
                 </div>
             </div>
@@ -32,7 +32,13 @@
 		},
 		created() {
       this.$store.dispatch('getStudentList')
-		}
+		},
+    computed: {
+      activeStudents() {
+        //argument is grade type id to filter out
+        return this.$store.getters.activeStudents(20);
+      }
+    }
 	}
 </script>
 

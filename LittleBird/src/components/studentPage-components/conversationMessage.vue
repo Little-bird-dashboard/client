@@ -20,7 +20,7 @@
 		props:    {
       messageData: {
         type: Object,
-        required: true,
+        required: false,
       }
     },
 		computed: {
